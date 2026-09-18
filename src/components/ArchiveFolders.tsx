@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   ArrowRight,
   ArrowLeft,
-  Layers,
   Bookmark,
   Volume2,
   VolumeX,
   FolderClosed,
-  ChevronUp
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { Folder01Ventures } from './folders/Folder01Ventures';
 import { Folder02Strategy } from './folders/Folder02Strategy';
@@ -252,10 +253,6 @@ export const ArchiveFolders: React.FC<Props> = ({
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-10 pb-4 border-b border-[#D8C498]">
         <div>
-          <div className="flex items-center gap-2 font-mono text-xs text-[#7A6136] uppercase tracking-wide-caps mb-1.5">
-            <Layers className="w-3.5 h-3.5 text-[#2A2113]" />
-            <span>Interactive Archival File System</span>
-          </div>
           <h2 className="text-xl sm:text-2xl font-bold font-sans tracking-tight text-[#09090B]">
             The Archive Folders
           </h2>
@@ -318,6 +315,7 @@ export const ArchiveFolders: React.FC<Props> = ({
 
         {/* Physical Manila Folder Jacket Body (Dossier Interior) */}
         <motion.div 
+          layout
           key={activeFolderIndex !== null ? `manila-jacket-open-${activeFolderIndex}` : 'manila-jacket-closed'}
           initial={{ y: 5, scale: 0.996 }}
           animate={{ y: 0, scale: 1 }}
@@ -326,51 +324,81 @@ export const ArchiveFolders: React.FC<Props> = ({
           id={activeFolderIndex !== null ? `manila-panel-${activeFolderIndex}` : 'manila-panel-closed'}
           aria-labelledby={activeFolderIndex !== null ? `stepped-tab-${activeFolderIndex}` : undefined}
           style={{ perspective: '1400px' }}
-          className="relative bg-gradient-to-b from-[#F5EBD0] via-[#EFE1C0] to-[#E2CD9D] border border-[#C2A770] rounded-b-2xl sm:rounded-b-3xl rounded-t-xl sm:rounded-t-2xl shadow-manila-folder p-3 sm:p-7 lg:p-9 transition-all z-10 -mt-2 sm:-mt-3"
+          className={`relative bg-gradient-to-b from-[#F5EBD0] via-[#EFE1C0] to-[#E2CD9D] border border-[#C2A770] rounded-b-2xl sm:rounded-b-3xl rounded-t-xl sm:rounded-t-2xl shadow-manila-folder transition-all z-10 -mt-2 sm:-mt-3 ${
+            activeFolderIndex === null 
+              ? 'p-4 sm:p-6 lg:p-8 cursor-pointer group hover:border-[#B89858]' 
+              : 'p-3 sm:p-7 lg:p-9'
+          }`}
+          onClick={activeFolderIndex === null ? () => handleTabClick(0) : undefined}
         >
-          {/* Manila Front Cover Die-Cut Rim & Scored Fold */}
-          <div className="relative mb-3 sm:mb-7 flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 px-2.5 sm:px-4 py-2 rounded-lg bg-[#EAD8AF]/80 border border-[#D5BF8F] shadow-[inset_0_1px_2px_rgba(100,75,25,0.08)]">
-            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] text-[#544122]">
-              <Bookmark className="w-3.5 h-3.5 text-[#8A6726] shrink-0" />
-              <span className="font-bold tracking-tight uppercase">MANILA FILE</span>
-              <span>//</span>
-              <AnimatePresence mode="wait">
-                <motion.span 
-                  key={currentFolder ? currentFolder.docketCode : 'COLLAPSED-INDEX'}
-                  initial={{ opacity: 0, y: -4 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 4 }}
-                  transition={{ duration: 0.15 }}
-                  className="font-semibold tracking-wider text-[#2A2113]"
-                >
-                  {currentFolder ? `${currentFolder.tabLabel} · ${currentFolder.docketCode}` : 'ALL 4 DOSSIERS SEALED'}
-                </motion.span>
-              </AnimatePresence>
-            </div>
+          {/* Manila Front Cover Die-Cut Rim & Scored Fold (Shown when folder is open) */}
+          {activeFolderIndex !== null && currentFolder && (
+            <div className="relative mb-3 sm:mb-7 flex flex-col xs:flex-row items-start xs:items-center justify-between gap-2 px-2.5 sm:px-4 py-2 rounded-lg bg-[#EAD8AF]/80 border border-[#D5BF8F] shadow-[inset_0_1px_2px_rgba(100,75,25,0.08)]">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 font-mono text-[10px] sm:text-[11px] text-[#544122]">
+                <Bookmark className="w-3.5 h-3.5 text-[#8A6726] shrink-0" />
+                <span className="font-bold tracking-tight uppercase">MANILA FILE</span>
+                <span>//</span>
+                <AnimatePresence mode="wait">
+                  <motion.span 
+                    key={currentFolder.docketCode}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.15 }}
+                    className="font-semibold tracking-wider text-[#2A2113]"
+                  >
+                    {currentFolder.tabLabel} · {currentFolder.docketCode}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
 
-            <div className="flex items-center gap-2 sm:gap-3 font-mono text-[10px] sm:text-[11px] text-[#544122] self-end xs:self-auto">
-              {activeFolderIndex !== null ? (
-                <>
-                  <span className="hidden md:inline text-[#7A6136]">CLASSIFICATION: UNRESTRICTED</span>
-                  <span className="px-2 py-0.5 rounded bg-[#FFFDF5] border border-[#D5C29B] font-bold text-[#3B2D16] whitespace-nowrap">
+              <div className="flex items-center gap-2 sm:gap-3 font-mono text-[10px] sm:text-[11px] text-[#544122] self-end xs:self-auto">
+                <span className="hidden md:inline text-[#7A6136]">CLASSIFICATION: UNRESTRICTED</span>
+                
+                {/* Stepper with Previous/Next Arrows */}
+                <div className="inline-flex items-center rounded bg-[#FFFDF5] border border-[#D5C29B] font-bold text-[#3B2D16] overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (activeFolderIndex > 0) handleTabClick(activeFolderIndex - 1);
+                    }}
+                    disabled={activeFolderIndex === 0}
+                    className="px-1.5 py-0.5 hover:bg-[#F4EBD7] disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed border-r border-[#D5C29B] transition-colors cursor-pointer"
+                    title="Previous folder (←)"
+                    aria-label="Previous Folder"
+                  >
+                    <ChevronLeft className="w-3 h-3 text-[#544122]" />
+                  </button>
+                  <span className="px-2 py-0.5 whitespace-nowrap">
                     SECTION {activeFolderIndex + 1} OF 04
                   </span>
                   <button
-                    onClick={handleCloseFolder}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#E4D1A7] hover:bg-[#DBC394] text-[#3D2C0E] border border-[#C6AB76] font-mono text-[11px] font-semibold transition-colors cursor-pointer"
-                    title="Collapse folder (Esc)"
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (activeFolderIndex < ARCHIVE_FOLDERS.length - 1) handleTabClick(activeFolderIndex + 1);
+                    }}
+                    disabled={activeFolderIndex === ARCHIVE_FOLDERS.length - 1}
+                    className="px-1.5 py-0.5 hover:bg-[#F4EBD7] disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed border-l border-[#D5C29B] transition-colors cursor-pointer"
+                    title="Next folder (→)"
+                    aria-label="Next Folder"
                   >
-                    <ChevronUp className="w-3.5 h-3.5" />
-                    <span>Collapse</span>
+                    <ChevronRight className="w-3 h-3 text-[#544122]" />
                   </button>
-                </>
-              ) : (
-                <span className="px-2.5 py-0.5 rounded-full bg-[#FAF3E2] border border-[#CDB584] text-[#6E5528] font-mono text-[10px] font-semibold">
-                  FOLDERS COLLAPSED · CLICK ANY TAB TO OPEN
-                </span>
-              )}
+                </div>
+
+                <button
+                  onClick={handleCloseFolder}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#E4D1A7] hover:bg-[#DBC394] text-[#3D2C0E] border border-[#C6AB76] font-mono text-[11px] font-semibold transition-colors cursor-pointer"
+                  title="Collapse folder (Esc)"
+                >
+                  <ChevronUp className="w-3.5 h-3.5" />
+                  <span>Collapse</span>
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* ================================================================= */}
           {/* 4. The Interior Content Area: Open Folder Sheet OR Collapsed Jacket */}
@@ -429,12 +457,43 @@ export const ArchiveFolders: React.FC<Props> = ({
                     </span>
                   </div>
 
-                  <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto">
-                    <div className="font-mono text-[11px] sm:text-xs text-[#71717A]">
+                  <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-2.5 w-full sm:w-auto">
+                    <div className="font-mono text-[11px] sm:text-xs text-[#71717A] mr-1 hidden xs:block">
                       <span className="text-[#8A6726] font-semibold">PHASE: </span>
                       <span className="font-bold text-[#09090B]">
                         {currentFolder.fullTitle}
                       </span>
+                    </div>
+
+                    {/* Left and Right Folder Switch Arrows */}
+                    <div className="inline-flex items-center rounded-md border border-[#D5BF8F] bg-[#F4EBD7] p-0.5 shadow-xs shrink-0">
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (activeFolderIndex > 0) handleTabClick(activeFolderIndex - 1);
+                        }}
+                        disabled={activeFolderIndex === 0}
+                        className="p-1 sm:px-1.5 rounded hover:bg-[#EBDDC3] text-[#544122] disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors cursor-pointer"
+                        title={activeFolderIndex > 0 ? `Previous: ${ARCHIVE_FOLDERS[activeFolderIndex - 1].tabLabel} (←)` : 'Beginning of archive'}
+                        aria-label="Previous folder"
+                      >
+                        <ChevronLeft className="w-3.5 h-3.5 text-[#544122]" />
+                      </button>
+                      <div className="w-[1px] h-3.5 bg-[#D5BF8F] mx-0.5" />
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          if (activeFolderIndex < ARCHIVE_FOLDERS.length - 1) handleTabClick(activeFolderIndex + 1);
+                        }}
+                        disabled={activeFolderIndex === ARCHIVE_FOLDERS.length - 1}
+                        className="p-1 sm:px-1.5 rounded hover:bg-[#EBDDC3] text-[#544122] disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed transition-colors cursor-pointer"
+                        title={activeFolderIndex < ARCHIVE_FOLDERS.length - 1 ? `Next: ${ARCHIVE_FOLDERS[activeFolderIndex + 1].tabLabel} (→)` : 'End of archive'}
+                        aria-label="Next folder"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5 text-[#544122]" />
+                      </button>
                     </div>
 
                     <button
@@ -519,75 +578,41 @@ export const ArchiveFolders: React.FC<Props> = ({
             </AnimatePresence>
           ) : (
             /* ================================================================= */
-            /* 4B. COLLAPSED MANILA DOSSIER COVER (Displayed when all folders closed) */
+            /* 4B. CLOSED MANILA FOLDER COVER (Displayed when folders are closed) */
             /* ================================================================= */
-            <motion.div
-              key="manila-cover-sealed"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.25 }}
-              className="relative bg-[#FCFBF8] border border-[#DED4C0] rounded-xl sm:rounded-2xl shadow-document-sheet p-6 sm:p-10 lg:p-12 overflow-hidden text-center"
+            <div 
+              className="flex flex-col items-center justify-center py-7 sm:py-10 select-none text-center"
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleTabClick(0);
+                }
+              }}
+              aria-label="Closed Archival Dossier. Click to expand folder."
             >
-              {/* Archival Folder Seal Stamp & Brass Eyelet Motif */}
-              <div className="flex flex-col items-center justify-center mb-6 select-none">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-dashed border-[#C5AA74] bg-[#F7EED8] flex items-center justify-center mb-4 shadow-inner">
-                  <FolderClosed className="w-8 h-8 sm:w-10 sm:h-10 text-[#7D6028]" />
+              {/* Authentic Red Cardstock Washer & Brass Eyelet String-Tie Closure */}
+              <div className="relative mb-4 flex items-center justify-center">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#8A2D23] border-2 border-[#5E1F18] shadow-md flex items-center justify-center group-hover:scale-105 group-hover:shadow-lg transition-all">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-[#ECC964] via-[#C9A23E] to-[#8C6418] border border-[#6B4B0C] shadow-inner flex items-center justify-center">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#3B2507] shadow-inner" />
+                  </div>
                 </div>
-                <span className="px-3 py-1 rounded-full bg-[#F5ECD6] border border-[#D8C498] text-[#544122] font-mono text-xs font-bold uppercase tracking-wider">
-                  Archival Dossiers Sealed
+                {/* Wound Archival Twine Graphic */}
+                <div className="absolute -bottom-1 left-7 w-7 h-[2px] bg-[#E8D8B5] shadow-xs rotate-12 pointer-events-none" />
+              </div>
+
+              <div className="text-center px-4">
+                <span className="inline-block px-3 py-1 rounded-full bg-[#EAD8AF]/80 border border-[#D5BF8F] font-mono text-[11px] sm:text-xs font-bold text-[#4A3714] tracking-wider uppercase mb-1.5 shadow-xs">
+                  Archival Career Dossiers Sealed
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-[#1C1917] mt-3 mb-2">
-                  Ishaan Jain Career Archive
-                </h3>
-                <p className="text-sm sm:text-base text-[#52525B] max-w-xl leading-relaxed">
-                  The records are currently closed. Click any of the 4 Manila tabs above, or choose a docket below to open and inspect the records.
+                <p className="font-mono text-xs text-[#7A6136] tracking-tight group-hover:text-[#3B2D16] transition-colors flex items-center justify-center gap-1.5">
+                  <span>Click any folder tab or click here to expand</span>
+                  <span className="text-xs transition-transform group-hover:translate-y-0.5">↓</span>
                 </p>
               </div>
-
-              {/* 4 Clickable Quick-Access Docket Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 max-w-3xl mx-auto text-left mt-6">
-                {ARCHIVE_FOLDERS.map((folder) => (
-                  <button
-                    key={folder.index}
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleTabClick(folder.index);
-                    }}
-                    className="group p-4 sm:p-5 rounded-xl bg-white hover:bg-[#FAF6EC] border border-[#E4D7BE] hover:border-[#BA9E69] transition-all shadow-xs hover:shadow-md cursor-pointer flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-mono text-[11px] font-bold text-[#8A6726] tracking-wider uppercase">
-                          Docket // 0{folder.index + 1}
-                        </span>
-                        <span className="inline-flex items-center text-xs font-mono font-medium text-[#7A6136] group-hover:text-[#09090B] group-hover:translate-x-0.5 transition-all">
-                          Open →
-                        </span>
-                      </div>
-                      <h4 className="text-base sm:text-lg font-bold text-[#1C1917] font-sans mb-1 group-hover:text-[#09090B]">
-                        {folder.tabLabel}
-                      </h4>
-                      <p className="text-xs text-[#52525B] leading-relaxed mb-3">
-                        {folder.description}
-                      </p>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[#F2E8D3]">
-                      {folder.highlights.map((h, i) => (
-                        <span 
-                          key={i} 
-                          className="px-2 py-0.5 rounded bg-[#F7F1E1] text-[10px] font-mono text-[#544122]"
-                        >
-                          {h}
-                        </span>
-                      ))}
-                    </div>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
+            </div>
           )}
 
           {/* 5. Authentic Scored Manila Expansion Creases at the Folder Base */}
