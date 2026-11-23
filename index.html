@@ -125,7 +125,7 @@ h1{font-size:min(10.4vw,150px)}
 .ring .bgc{stroke:rgba(19,26,0,.18)}
 .ring .fg{stroke:#131A00;stroke-linecap:round;stroke-dasharray:201;stroke-dashoffset:0;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
 .spark{position:absolute;left:0;right:0;bottom:0;width:100%;height:55%}
-.spark path{fill:none;stroke:#B8925A;stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s ease-out}
+.spark .sl{fill:none;stroke:#B8925A;stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s cubic-bezier(.33,1,.68,1)}
 .clock{font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,52px);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
 .t .lab{color:var(--dim);font-size:14px}
 .t7 .n2{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:clamp(22px,2.6vw,34px);text-transform:uppercase;letter-spacing:-.02em;line-height:1}
@@ -133,7 +133,8 @@ h1{font-size:min(10.4vw,150px)}
 .chips span{border:1.5px solid currentColor;border-radius:999px;padding:6px 13px;font-size:14px;font-weight:500}
 html.js .t:not(.seen) .bars i{transform:scaleY(0)}
 html.js .t:not(.seen) .ring .fg{stroke-dashoffset:201}
-html.js .t:not(.seen) .spark path{stroke-dashoffset:420}
+html.js .t:not(.seen) .spark .sl{stroke-dashoffset:420}
+
 
 
 /* tile pop-ups */
@@ -286,6 +287,21 @@ html.js .t:not(.seen) .n{font-stretch:62%;opacity:.2}
 @media (max-width:860px){.proofs{grid-template-columns:1fr 1fr;gap:12px 16px}.t7 .n2{width:100%}}
 @media (max-width:420px){.proofs{grid-template-columns:1fr}}
 
+
+/* 4: trade routes legend */
+.t1 .mk{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;position:relative;z-index:1;max-width:60%}
+.t1 .mk span{font-size:12px;font-weight:600;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;padding:3px 9px;opacity:.45;transition:opacity .4s,background .4s,color .4s,border-color .4s}
+.t1 .mk span.on{opacity:1;background:#FFDA57;border-color:#FFDA57;color:#0056A3}
+/* 5: ORA line draws with a moving head */
+.spark .sa{fill:url(#oraG);stroke:none!important;opacity:1;transition:opacity 1.2s ease .6s}
+html.js .t4:not(.seen) .spark .sa{opacity:0}
+.t4 .shead{position:absolute;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:#B8925A;box-shadow:0 0 0 5px rgba(184,146,90,.25);left:100%;top:45%;opacity:0;pointer-events:none}
+.t4 .gsp{position:absolute;width:7px;height:7px;border-radius:50%;background:#D9B98C;pointer-events:none}
+/* 6: quote writes itself */
+.tqt .w{transition:opacity .3s,color .6s}
+html.js .t5:not(.seen) .tqt .w,.tqt .w.off{opacity:.12}
+.tqt .w.key.hl{color:var(--lime)}
+
 /* section heads */
 .sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:84px 0 22px}
 .sh h2{margin:0;font-size:clamp(40px,7.4vw,104px)}
@@ -402,10 +418,10 @@ html.js .rv.seen{opacity:1;transform:perspective(900px) rotateX(var(--rx,0deg)) 
 
 <div class="wrap">
   <section class="bento" aria-label="Headline results">
-    <article data-tile="t1" tabindex="0" role="button" aria-haspopup="dialog" class="t t1 rv"><canvas id="mini" aria-hidden="true"></canvas><small>Export markets I worked across at Linc</small><div class="n"><span data-n="50">50</span>+</div></article>
+    <article data-tile="t1" tabindex="0" role="button" aria-haspopup="dialog" class="t t1 rv"><canvas id="mini" aria-hidden="true"></canvas><small>Export markets I worked across at Linc</small><div class="mk" aria-hidden="true"><span>UAE</span><span>Oman</span><span>Greece</span><span>Indonesia</span><span>Brazil</span></div><div class="n"><span data-n="50">50</span>+</div></article>
     <article data-tile="t2" tabindex="0" role="button" aria-haspopup="dialog" class="t t2 rv" style="--d:.06s"><div class="bars" aria-hidden="true"><i style="--h:35%;--d:.1s"></i><i style="--h:62%;--d:.2s"></i><i style="--h:100%;--d:.3s"></i></div><small>Revenue added at Linc in three quarters</small><div class="n odo" aria-label="₹2 Cr+"><span class="ov" aria-hidden="true">₹2 Cr+</span></div></article>
     <article data-tile="t3" tabindex="0" role="button" aria-haspopup="dialog" class="t t3 rv" style="--d:.12s"><svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle class="bgc" cx="40" cy="40" r="32"/><circle class="fg" cx="40" cy="40" r="32"/></svg><small>Of target at Zomato, across my full tenure</small><div class="meter" aria-hidden="true"><i><b></b><em>Sep 2023</em><em class="r">Mar 2025</em></i></div><div class="n"><span data-n="100">100</span>%</div></article>
-    <article data-tile="t4" tabindex="0" role="button" aria-haspopup="dialog" class="t t4 rv" style="--d:.06s"><svg class="spark" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,92 C50,90 70,80 110,70 S170,58 200,36 S270,14 300,6"/></svg><small>ORA Perfumes, zero to this in eight weeks</small><div class="n">₹<span data-n="2.5" data-f="1">2.5</span> L+</div></article>
+    <article data-tile="t4" tabindex="0" role="button" aria-haspopup="dialog" class="t t4 rv" style="--d:.06s"><svg class="spark" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="oraG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D9B98C" stop-opacity=".5"/><stop offset="1" stop-color="#D9B98C" stop-opacity="0"/></linearGradient></defs><path class="sa" d="M0,92 C50,90 70,80 110,70 S170,58 200,36 S270,14 300,6 L300,100 L0,100 Z"/><path class="sl" d="M0,92 C50,90 70,80 110,70 S170,58 200,36 S270,14 300,6"/></svg><i class="shead" aria-hidden="true"></i><small>ORA Perfumes, zero to this in eight weeks</small><div class="n">₹<span data-n="2.5" data-f="1">2.5</span> L+</div></article>
     <article class="t t5 rv tq" tabindex="0" role="button" aria-haspopup="dialog" data-rec="1" style="--d:.12s"><span class="qm2" aria-hidden="true">“</span><p class="tqt">Despite his young age, he demonstrates a level of maturity and strategic thinking that's truly impressive.</p><span class="tqw"><b>Ankur Tewari</b>Head of Sales, Ex Ferrero, Cadbury</span></article>
     <article data-tile="t6" tabindex="0" role="button" aria-haspopup="dialog" class="t t6 rv"><span class="lab" style="color:#E6E6EC">Right now</span><div class="n2 d" style="font-size:clamp(22px,2.4vw,32px);font-stretch:112%">MBA at Masters' Union<br><span style="color:var(--lime)">Merit scholar</span></div></article>
     <article class="t t7 rv" style="--d:.06s"><div class="n2">Good at,<br>with proof</div><ul class="proofs">
@@ -550,11 +566,38 @@ function odo(tile){const ov=tile.querySelector('.odo .ov');if(!ov||reduce)return
 
 /* reveal */
 if(!reduce&&'IntersectionObserver' in window){document.documentElement.classList.add('js');
-  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');e.target.querySelectorAll('[data-n]').forEach(count);if(e.target.querySelector('.odo'))odo(e.target);io.unobserve(e.target);}}),{rootMargin:'0px 0px -6% 0px'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');e.target.querySelectorAll('[data-n]').forEach(count);if(e.target.querySelector('.odo'))odo(e.target);onSeen(e.target);io.unobserve(e.target);}}),{rootMargin:'0px 0px -6% 0px'});
   document.querySelectorAll('.rv').forEach(n=>io.observe(n));}
 /* tilt */
 if(fine&&!reduce)document.querySelectorAll('.t').forEach(t=>{t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*7+'deg');t.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*7+'deg');});
   t.addEventListener('pointerleave',()=>{t.style.setProperty('--rx','0deg');t.style.setProperty('--ry','0deg');});});
+/* ---- motion: trade routes, ORA line, typed quote ---- */
+const MKS=[[54.4,24.4],[58.4,23.6],[23.7,38],[106.8,-6.2],[-47.9,-15.8]],HOMEL=[78.9,22.5];let arcT0=-1;
+function startArcs(){arcT0=performance.now();document.querySelectorAll('.t1 .mk span').forEach(s=>s.classList.remove('on'));}
+function v3(lon,lat){lon*=D;lat*=D;return[Math.cos(lat)*Math.cos(lon),Math.cos(lat)*Math.sin(lon),Math.sin(lat)];}
+function slerp(a,b,t){const d=Math.acos(Math.min(1,a[0]*b[0]+a[1]*b[1]+a[2]*b[2])),s=Math.sin(d);if(s<1e-6)return a;const k1=Math.sin((1-t)*d)/s,k2=Math.sin(t*d)/s;return[a[0]*k1+b[0]*k2,a[1]*k1+b[1]*k2,a[2]*k1+b[2]*k2];}
+function drawArcs(W,R,ph){if(arcT0<0&&!reduce)return;const el=reduce?99:(performance.now()-arcT0)/1000,home=v3(...HOMEL),cx=W/2,cy=W/2,mk=document.querySelectorAll('.t1 .mk span');
+  const pr=(v,h)=>{const lon=Math.atan2(v[1],v[0]),lat=Math.asin(v[2]),cl=Math.cos(lat),x=cl*Math.sin(lon-lam),y=Math.sin(lat),z=cl*Math.cos(lon-lam);return[x*h,(y*Math.cos(ph)-z*Math.sin(ph))*h,y*Math.sin(ph)+z*Math.cos(ph)];};
+  MKS.forEach((m,i)=>{const st=.3+i*.45,p=Math.max(0,Math.min(1,(el-st)/1.3));if(p<=0)return;const tg=v3(m[0],m[1]);
+    ctx.lineWidth=2;ctx.strokeStyle='#FFDA57';ctx.shadowColor='#FFDA57';ctx.shadowBlur=8;ctx.globalAlpha=.95;ctx.beginPath();let on=false;
+    for(let k=0;k<=36;k++){const tt=k/36*p,q=pr(slerp(home,tg,tt),1+.3*Math.sin(Math.PI*tt));if(q[2]<-.2){on=false;continue;}const X=cx+R*q[0],Y=cy-R*q[1];if(!on){ctx.moveTo(X,Y);on=true;}else ctx.lineTo(X,Y);}
+    ctx.stroke();ctx.shadowBlur=0;
+    if(p>=1){mk[i]&&mk[i].classList.add('on');const q=pr(tg,1);if(q[2]>0){const pu=reduce?0:((el-st-1.3)%1.8)/1.8;ctx.globalAlpha=1-pu;ctx.beginPath();ctx.arc(cx+R*q[0],cy-R*q[1],3+pu*14,0,7);ctx.stroke();ctx.globalAlpha=1;ctx.fillStyle='#FFDA57';ctx.beginPath();ctx.arc(cx+R*q[0],cy-R*q[1],3.2,0,7);ctx.fill();}}});
+  const hq=pr(home,1);if(hq[2]>0){ctx.globalAlpha=1;ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(cx+R*hq[0],cy-R*hq[1],4.2,0,7);ctx.fill();}
+  ctx.globalAlpha=1;ctx.fillStyle='#fff';}
+function oraDraw(t){if(reduce)return;const sv=t.querySelector('.spark'),pl=t.querySelector('.sl'),hd=t.querySelector('.shead');if(!pl||!hd)return;
+  const L=pl.getTotalLength(),dur=1400,t0=performance.now();hd.style.opacity=1;
+  (function s(now){const k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3),pt=pl.getPointAtLength(L*e),r=sv.getBoundingClientRect(),tr=t.getBoundingClientRect();
+    hd.style.left=(r.left-tr.left+pt.x/300*r.width)+'px';hd.style.top=(r.top-tr.top+pt.y/100*r.height)+'px';
+    if(k<1)requestAnimationFrame(s);else{for(let i=0;i<16;i++){const g=document.createElement('i');g.className='gsp';g.style.left=hd.style.left;g.style.top=hd.style.top;t.appendChild(g);
+      const a=Math.random()*Math.PI*2,d=24+Math.random()*46;g.animate([{opacity:1,transform:'translate(-50%,-50%) scale(1)'},{opacity:0,transform:`translate(calc(-50% + ${Math.cos(a)*d}px),calc(-50% + ${Math.sin(a)*d}px)) scale(.3)`}],{duration:900+Math.random()*400,easing:'cubic-bezier(.2,.8,.2,1)'}).onfinish=()=>g.remove();}}})(t0);}
+(function(){const q=document.querySelector('.t5 .tqt');if(!q)return;const KEYS=['maturity','strategic','thinking'];
+  q.innerHTML=q.textContent.split(' ').map(w=>`<span class="w${KEYS.some(k=>w.toLowerCase().startsWith(k))?' key':''}">${w}</span>`).join(' ');
+  if(reduce)q.querySelectorAll('.key').forEach(k=>k.classList.add('hl'));})();
+function typeQuote(t){const ws=[...t.querySelectorAll('.tqt .w')];if(!ws.length)return;ws.forEach(w=>w.classList.add('off'));let i=0;
+  (function st(){if(i<ws.length){ws[i].classList.remove('off');i++;setTimeout(st,85);}else setTimeout(()=>t.querySelectorAll('.tqt .key').forEach((k,j)=>setTimeout(()=>k.classList.add('hl'),j*120)),200);})();}
+function onSeen(t){if(t.classList.contains('t1'))startArcs();if(t.classList.contains('t4'))oraDraw(t);if(t.classList.contains('t5'))typeQuote(t);}
+
 /* mini globe */
 const RLE="Z2j535Z1g1522a72Z164111347e1311a21712f111224a52q3f121131ay523843b1211o32df921s21gbcuibc31112221f21iad2461d11n7e5112hp421dd1dr1ha1429t2fe4222Z1cc6142y49de1v6c7b112w7b6c11141s9a5d251s7b5i111t6a611e5t6b421d7s4d4g8r4e2h223r4Z132r2Z16141m2Z1y1Z601n24du19Z116h9Z138j1Z183Z20",MW=72,MH=36,land=[];
 RLE.replace(/Z(..)|(.)/g,(m,a,b)=>{const n=parseInt(a||b,36),v=land.flip?1:0;for(let k=0;k<n;k++)land.push(v);land.flip=!land.flip;});
@@ -565,8 +608,8 @@ function g(){const dpr=Math.min(2,devicePixelRatio||1),W=cv.clientWidth;if(cv.wi
   ctx.beginPath();ctx.arc(W/2,W/2,R,0,7);ctx.fillStyle='rgba(255,255,255,.08)';ctx.fill();ctx.fillStyle='#fff';
   for(const d of dots){const cl=Math.cos(d[1]),x=cl*Math.sin(d[0]-lam),y=Math.sin(d[1]),z=cl*Math.cos(d[0]-lam),y2=y*Math.cos(ph)-z*Math.sin(ph),z2=y*Math.sin(ph)+z*Math.cos(ph);
     if(z2>0){ctx.globalAlpha=.25+.75*z2;ctx.beginPath();ctx.arc(W/2+R*x,W/2-R*y2,Math.max(1,R/85)*(.6+.6*z2),0,7);ctx.fill();}}
-  ctx.globalAlpha=1;}
-function loop(){if(vis){lam+=.004;g();}requestAnimationFrame(loop);}
+  ctx.globalAlpha=1;drawArcs(W,R,ph);}
+function loop(){if(vis){lam+=.0025;g();}requestAnimationFrame(loop);}
 if(reduce){g();addEventListener('resize',g);}else{if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);loop();}
 
 /* tile pop-ups */
