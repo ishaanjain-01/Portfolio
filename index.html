@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ishaan Jain | Growth, brands and markets</title>
+<meta name="description" content="Ishaan Jain. Three years selling for Linc and Zomato, two ventures of my own, and an MBA in progress at Masters' Union.">
+<meta property="og:title" content="Ishaan Jain | Growth, brands and markets">
+<meta property="og:description" content="50+ countries at Linc, 100% of target at Zomato, co-founder of ORA Perfumes.">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<meta name="theme-color" content="#101013">
+<meta property="og:image" content="https://ishaan-jain-rho.vercel.app/img/head.jpg">
+<meta property="og:url" content="https://ishaan-jain-rho.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ishaan-jain-rho.vercel.app/img/head.jpg">
+<link rel="preload" as="image" href="img/cutout.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: one page, one story. A name set in type that stretches under the cursor, a bento of live tiles for the headline results, then four stacking case cards. Dark single theme by choice; colour lives in the tiles. */
+  --bg:#101013;
+  --tile:#1C1C21;
+  --paper:#F4F0E6;
+  --cobalt:#3350FF;
+  --tang:#FF7A1F;
+  --lime:#C9F250;
+  --dim:#9A9AA6;
+  --display:"Archivo","Arial Black",Arial,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.45;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.d{font-family:var(--display);font-stretch:125%;font-weight:900;letter-spacing:-.03em;line-height:.9;text-transform:uppercase}
+
+/* nav */
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0}
+.nav .pill{display:inline-flex;align-items:center;gap:9px;border:1px solid #34343C;border-radius:999px;padding:8px 14px;font-size:14px}
+.nav .pill span.y{display:none}
+.t3 small{padding-right:70px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(201,242,80,.7);animation:pulse 1.8s infinite}
+@keyframes pulse{to{box-shadow:0 0 0 12px rgba(201,242,80,0)}}
+.nav a.navr{display:flex;gap:8px;align-items:center}.navr .btn+.btn{margin-left:8px}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px #4A4A55}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--paper)}
+.navr .btn,.nav .pill{white-space:nowrap}.sm2{display:none}
+@media (max-width:600px){.navr .lg2{display:none}.navr .sm2{display:inline}.navr .btn{padding:9px 14px;font-size:14px}.nav .pill{padding:8px 12px;font-size:13px}}
+.btn{background:var(--paper);color:var(--bg);text-decoration:none;font-weight:600;border-radius:999px;padding:10px 18px;font-size:15px}
+
+/* hero */
+.hero{padding:10px 0 26px;position:relative}
+.hi{font-size:clamp(18px,2.2vw,26px);margin:0 0 6px;color:var(--dim)}
+h1{margin:0;font-size:min(10.4vw,129px);white-space:nowrap;cursor:default;user-select:none}
+h1 .ln{display:inline-block;transform-origin:left;animation:stretch 1.1s cubic-bezier(.2,.8,.2,1) both}
+h1 .ln+.ln{animation-delay:.12s}
+@keyframes stretch{from{font-stretch:62%;opacity:0;transform:translateY(30px)}}
+.sub{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:18px 40px;margin-top:22px}
+.grow{font-family:var(--display);font-weight:800;font-stretch:100%;font-size:clamp(26px,4.2vw,56px);letter-spacing:-.02em;line-height:1.05;margin:0}
+.swap{display:inline-block;height:1.05em;overflow:hidden;vertical-align:bottom}
+.swap span{display:block;color:var(--lime);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.blurb{max-width:27em;margin:0;color:#CFCFD6}
+.me{position:relative;width:clamp(150px,15vw,200px);aspect-ratio:1;flex:none;order:3}
+.me img{position:absolute;inset:15%;width:70%;height:70%;border-radius:50%;object-fit:cover;box-shadow:0 0 0 4px var(--lime)}
+.badge{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
+.sub .grow{order:1}.sub .blurb{order:2}
+.badge text{font-family:var(--body);font-weight:600;font-size:9.6px;fill:var(--paper);letter-spacing:.06em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+
+/* hero cut-out */
+.hero{position:relative}
+.hero .nb>*:not(.cut),.hero .blurb{position:relative;z-index:1}
+h1 .ln{display:block}
+h1{font-size:min(10.4vw,150px)}
+.hero .grow{margin-top:22px}
+.hero .blurb{margin-top:18px}
+.cut{position:absolute;z-index:0;right:0;bottom:-26px;height:calc(100% + 26px);max-height:640px;width:auto;pointer-events:none;
+  filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));animation:rise 1.1s cubic-bezier(.2,.8,.2,1) .15s both}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}}
+.hero::before{content:"";position:absolute;right:4%;bottom:-26px;width:min(44vw,560px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(201,242,80,.22),rgba(51,80,255,.12) 45%,transparent 70%);pointer-events:none}
+@media (min-width:861px){.hero .nb>*:not(.cut),.hero .blurb{max-width:58%}.hero{min-height:520px;display:flex;flex-direction:column;justify-content:flex-end}.cut{height:min(calc(100% + 26px),470px);right:3%}.hero::before{width:min(36vw,460px);right:6%}}
+@media (max-width:860px){
+  .hero .nb{position:relative}
+  .cut{right:-14px;bottom:-6px;height:calc(100% - 32px - 14.8vw + 6px);max-height:none;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+  .hero .grow{max-width:48%;margin-top:clamp(40px,14vw,70px);font-size:clamp(30px,9vw,40px);line-height:1.02}
+  .hero .grow .swap{display:block}
+  .hero::before{right:-10%;bottom:auto;top:30%;width:80vw}
+}
+@media (prefers-reduced-motion:reduce){.cut{animation:none}}
+
+/* marquee */
+.mq{overflow:hidden;border-block:1px solid #2B2B32;margin:26px 0;padding:14px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:slide 30s linear infinite}
+.mq span{font-family:var(--display);font-weight:800;font-stretch:112%;font-size:clamp(18px,2.4vw,28px);text-transform:uppercase;margin:0 22px}
+.mq span:nth-child(even){color:transparent;-webkit-text-stroke:1px var(--paper)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px}
+.t{border-radius:26px;padding:22px;min-height:210px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;background:var(--tile);transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s}
+.t small{font-size:15px;font-weight:500;display:block;max-width:15em;position:relative}
+.t .n{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:clamp(46px,6.2vw,88px);letter-spacing:-.04em;line-height:.9;position:relative;font-variant-numeric:tabular-nums}
+.t1{grid-column:span 5;grid-row:span 2;background:#0056A3;color:#fff}
+.t2{grid-column:span 4;background:#FFDA57;color:#0056A3}
+.t3{grid-column:span 3;background:#E23744;color:#fff}
+.t3[data-tile]::after{background:rgba(255,255,255,.2)}
+.t3 .meter i{background:rgba(0,0,0,.18)}
+.t4{grid-column:span 4;background:#F8F5F0;color:#3B241E}
+.t5{grid-column:span 3}
+.t6{grid-column:span 4;background:linear-gradient(180deg,rgba(16,16,19,.15) 0%,rgba(16,16,19,.55) 45%,rgba(16,16,19,.95) 100%),url(img/pepperfry.jpg) center 22%/cover}
+.t7{grid-column:span 8;flex-direction:row;align-items:center;min-height:120px;gap:18px;flex-wrap:wrap}
+#mini{position:absolute;right:-14%;bottom:-22%;width:86%;aspect-ratio:1}
+.bars{display:flex;align-items:flex-end;gap:8px;height:64px;position:absolute;right:22px;top:22px}
+.bars i{width:16px;border-radius:5px 5px 0 0;background:#1A0C00;height:var(--h);transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d)}
+.ring{position:absolute;right:16px;top:16px;width:74px;height:74px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:9}
+.ring .bgc{stroke:rgba(19,26,0,.18)}
+.ring .fg{stroke:#131A00;stroke-linecap:round;stroke-dasharray:201;stroke-dashoffset:0;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)}
+.spark{position:absolute;left:0;right:0;bottom:0;width:100%;height:55%}
+.spark path{fill:none;stroke:#B8925A;stroke-width:4;stroke-linecap:round;stroke-dasharray:420;stroke-dashoffset:0;transition:stroke-dashoffset 1.4s ease-out}
+.clock{font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,52px);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+.t .lab{color:var(--dim);font-size:14px}
+.t7 .n2{font-family:var(--display);font-weight:900;font-stretch:112%;font-size:clamp(22px,2.6vw,34px);text-transform:uppercase;letter-spacing:-.02em;line-height:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{border:1.5px solid currentColor;border-radius:999px;padding:6px 13px;font-size:14px;font-weight:500}
+html.js .t:not(.seen) .bars i{transform:scaleY(0)}
+html.js .t:not(.seen) .ring .fg{stroke-dashoffset:201}
+html.js .t:not(.seen) .spark path{stroke-dashoffset:420}
+
+
+/* tile pop-ups */
+.t[data-tile]{cursor:pointer}
+.t[data-tile]::after{content:"+";position:absolute;right:16px;top:16px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:500 22px/1 var(--body);background:rgba(255,255,255,.18);color:inherit;transition:transform .3s cubic-bezier(.2,.8,.2,1),background .2s}
+.t2[data-tile]::after,.t3[data-tile]::after,.t4[data-tile]::after{background:rgba(0,0,0,.1)}
+.t[data-tile]:hover::after,.t[data-tile]:focus-visible::after{transform:rotate(90deg);background:rgba(255,255,255,.3)}
+.t[data-tile]:active{transform:scale(.98)}
+.t7[data-tile]::after{top:50%;margin-top:-15px}
+.t[data-tile] small{padding-right:40px}
+.bars{right:62px!important}.ring{right:58px!important}
+.t2 .bars{display:none}.t2[data-tile] small{padding-right:40px}.t3[data-tile] small{padding-right:40px}
+@media (max-width:860px){.t[data-tile]::after{width:26px;height:26px;font-size:19px;right:12px;top:12px}.bars,.ring{display:none}.t2[data-tile] small,.t3[data-tile] small{padding-right:34px}}
+.t7{padding-right:60px}
+dialog.pop{border:0;padding:0;margin:auto;width:min(720px,calc(100% - 24px));max-height:min(88vh,860px);border-radius:28px;background:var(--pb,var(--tile));color:var(--pc,var(--paper));overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+dialog.pop::backdrop{background:rgba(6,6,8,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+dialog.pop[open]{animation:popin .45s cubic-bezier(.2,.9,.25,1)}
+@keyframes popin{from{opacity:0;transform:translate(var(--ox,0),var(--oy,0)) scale(.6)}}
+dialog.pop.closing{animation:popout .22s ease-in forwards}
+@keyframes popout{to{opacity:0;transform:translate(var(--ox,0),var(--oy,0)) scale(.7)}}
+.pin{overflow:auto;max-height:inherit;padding:30px clamp(22px,4vw,40px) 34px}
+.pop .x{position:absolute;top:14px;right:14px;z-index:3;backdrop-filter:blur(6px);width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.25);color:inherit;font-size:20px;cursor:pointer;display:grid;place-items:center}
+.pop .lab2{font-weight:600;font-size:14px;opacity:.75;margin:0}
+.pop h2{margin:8px 0 6px;font-size:clamp(56px,11vw,104px)}
+.pop .lead{font-size:clamp(18px,2vw,21px);font-weight:500;margin:0 0 22px;max-width:30em}
+.pop .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:0 0 24px}
+.pop .grid div{border-top:2px solid currentColor;padding-top:8px}
+.pop .grid b{display:block;font-family:var(--display);font-weight:800;font-stretch:105%;font-size:26px;letter-spacing:-.02em;line-height:1.05}
+.pop .grid span{font-size:14px;font-weight:500;opacity:.85}
+.pop h4{font-family:var(--display);font-weight:800;font-stretch:112%;text-transform:uppercase;font-size:15px;letter-spacing:.02em;margin:20px 0 8px}
+.pop ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.pop li{font-size:16px;line-height:1.45}
+.pop .tags{display:flex;flex-wrap:wrap;gap:8px}
+.pop .tags span{border:1.5px solid currentColor;border-radius:999px;padding:5px 12px;font-size:14px;font-weight:500}
+.pop a.go{display:inline-block;margin-top:22px;font-weight:600;background:currentColor;border-radius:999px;padding:10px 18px;text-decoration:none}
+.pop a.go span{color:var(--pb,var(--tile))}
+@media (prefers-reduced-motion:reduce){dialog.pop[open],dialog.pop.closing{animation:none}}
+
+
+.pop .ph{position:relative;margin:-30px calc(-1 * clamp(22px,4vw,40px)) 22px;height:clamp(260px,50vh,440px);overflow:hidden;background:#0b0b0d}
+.pop .ph::before{content:"";position:absolute;inset:-30px;background:var(--src) center/cover;filter:blur(24px) brightness(.6);transform:scale(1.1)}
+.pop .ph img{position:relative;width:100%;height:100%;object-fit:contain;display:block}
+.pop .ph.wide img{object-fit:cover}
+.pop .ph figcaption,.pop .cap{font-size:14px;opacity:.8;margin:-14px 0 18px}
+.pop.photo{width:min(980px,calc(100% - 24px));background:#0b0b0d}
+.pop.photo .pin{padding:0}
+.pop.photo img{display:block;width:100%;max-height:80vh;object-fit:contain;background:#0b0b0d}
+.pop.photo p{margin:0;padding:14px 20px 18px;font-size:15px}
+/* field photos */
+.field{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 14px;margin:0 -20px;scrollbar-width:none}
+.field::-webkit-scrollbar{display:none}
+.field figure{margin:0;flex:0 0 auto;width:clamp(240px,30vw,360px);scroll-snap-align:start;cursor:zoom-in}
+.field .fr{border-radius:22px;overflow:hidden;aspect-ratio:4/5;background:var(--tile)}
+.field .w .fr{aspect-ratio:4/5}
+.field img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.field figure:hover img{transform:scale(1.04)}
+.field figcaption{font-size:14px;color:var(--dim);margin-top:10px;line-height:1.35;max-width:30em}
+.field figcaption b{color:var(--paper);font-weight:600;display:block}
+.fin .pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 16px}
+.fin .pics img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block}
+
+
+/* number load animations */
+.meter{display:flex;gap:6px;margin:auto 0 14px;position:relative}
+.meter i{flex:1;height:10px;border-radius:99px;background:rgba(0,0,0,.14);position:relative}
+.meter b{position:absolute;inset:0;border-radius:inherit;background:currentColor;transform-origin:left;transform:scaleX(1);transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.meter em.r{left:auto;right:0}
+.meter em{position:absolute;left:0;top:14px;font-style:normal;font-size:12px;font-weight:600;opacity:.7}
+.t2 .meter i:nth-child(1) b{transition-delay:.15s}.t2 .meter i:nth-child(2) b{transition-delay:.55s}.t2 .meter i:nth-child(3) b{transition-delay:.95s}
+.t3 .meter i:nth-child(1) b{transition-delay:.15s;transition-duration:1.5s}.t3 .meter i:nth-child(2) b{transition-delay:.85s;transition-duration:.9s}
+html.js .t:not(.seen) .meter b{transform:scaleX(0)}
+.t2 .meter,.t3 .meter{margin-bottom:26px}
+.t2 .n,.t3 .n{margin-top:0}
+.t .n{display:inline-block;transform-origin:left bottom}
+.t.landed .n{animation:land .6s cubic-bezier(.3,1.6,.5,1)}
+@keyframes land{0%{transform:scale(1)}35%{transform:scale(1.08)}100%{transform:scale(1)}}
+.t .n .u{display:inline-block}
+.t.seen .n{animation-fill-mode:both}
+html.js .t:not(.seen) .n{font-stretch:62%;opacity:.2}
+.t .n{transition:font-stretch 1.2s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.t3 .ring{display:none}
+@media (prefers-reduced-motion:reduce){.t.landed .n{animation:none}}
+
+
+/* Linc number: counts up in lakhs, then flips to crores */
+.odo{display:block;overflow:hidden;height:1em;line-height:.95;padding-top:.02em;margin-top:auto}
+.odo .ov{display:inline-block;will-change:transform,filter}
+.odo .ov.out{animation:odoOut .28s cubic-bezier(.5,0,.75,0) forwards}
+.odo .ov.in{animation:odoIn .55s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes odoOut{to{transform:translateY(-110%);filter:blur(6px);opacity:0}}
+@keyframes odoIn{from{transform:translateY(110%);filter:blur(6px);opacity:0}}
+.odo .ov.tick{animation:tick .12s ease-out}
+@keyframes tick{from{transform:translateY(8%)}}
+
+
+/* company logos */
+.case .meta{align-items:center}
+.co{display:inline-flex;align-items:center;gap:14px}
+.co em{font-style:normal}
+.lg{display:block;width:auto}
+.case h3.hl{line-height:0;margin-bottom:18px}
+.lg-linc{height:clamp(56px,6.4vw,84px)}
+.lg-zom{height:clamp(42px,5vw,66px)}
+.lg-ora{height:clamp(110px,11vw,150px);margin:-8px 0 -10px}
+.pop .plogo{margin:0 0 14px}
+.pop .plogo .lg-linc{height:46px}.pop .plogo .lg-zom{height:32px}.pop .plogo .lg-ora{height:90px;margin:0}
+.pop h2 .lg{display:block}.pop h2 .lg-linc{height:clamp(54px,8vw,76px)}.pop h2 .lg-zom{height:clamp(40px,6vw,60px)}.pop h2 .lg-ora{height:clamp(100px,14vw,140px);margin:0}
+.pop h2.hl{margin:10px 0 18px;line-height:0}
+
+
+/* recommendations carousel */
+.recs{margin-bottom:10px}
+.rtrack{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 20px 6px;margin:0 -20px;scrollbar-width:none;scroll-behavior:smooth}
+.rtrack::-webkit-scrollbar{display:none}
+.rec{margin:0;flex:0 0 auto;width:clamp(280px,32vw,400px);scroll-snap-align:start;background:var(--tile);border-radius:24px;padding:24px 24px 22px;display:flex;flex-direction:column;position:relative}
+.rec .qm{font-family:var(--display);font-weight:900;font-size:84px;line-height:.6;color:var(--lime);height:34px}
+.rec blockquote{margin:6px 0 22px;font-size:19px;line-height:1.38;font-weight:500;letter-spacing:-.005em;flex:1}
+.rec figcaption{display:flex;gap:12px;align-items:flex-start;border-top:1px solid #34343C;padding-top:16px}
+.rec .av{flex:none;width:42px;height:42px;border-radius:50%;background:#2C2C33;color:var(--lime);display:grid;place-items:center;font-weight:600;font-size:15px}
+.rec b{display:block;font-weight:600;font-size:16px}
+.rec small{display:block;color:var(--dim);font-size:13px;line-height:1.35;margin-top:2px}
+.rec small.rl{color:#C4C4CC}
+.readall{margin-top:14px;align-self:flex-start;background:none;border:1.5px solid #4A4A55;color:var(--paper);border-radius:999px;padding:7px 14px;font:600 14px var(--body);cursor:pointer}
+.readall:hover{border-color:var(--paper)}
+.rnav{display:flex;align-items:center;gap:10px;margin-top:14px}
+.rarr{width:42px;height:42px;border-radius:50%;border:1.5px solid #4A4A55;background:none;color:var(--paper);font-size:18px;cursor:pointer}
+.rarr:hover{border-color:var(--paper)}
+.rarr:disabled{opacity:.35;cursor:default}
+.rli{margin-left:auto;color:var(--dim);font-size:14px}
+.pop .rfull p{font-size:17px;line-height:1.55;margin:0 0 14px}
+.pop .rwho{margin-top:6px;border-top:1.5px solid currentColor;padding-top:14px}
+.pop .rwho b{display:block;font-size:17px}.pop .rwho small{display:block;opacity:.75;font-size:14px}
+@media (max-width:860px){.rtrack{margin:0 -14px;padding:4px 14px 6px;scroll-padding-left:14px}.rec{width:82vw}.rec blockquote{font-size:18px}}
+
+
+/* quote tile + proof tile */
+.t5.tq{background:var(--tile);cursor:pointer;justify-content:space-between;gap:10px}
+.tq .qm2{font-family:var(--display);font-weight:900;font-size:64px;line-height:.55;color:var(--lime);height:26px}
+.tq .tqt{margin:0;font-size:clamp(16px,1.35vw,18px);line-height:1.38;font-weight:500}
+.tq .tqw{font-size:13px;color:var(--dim);line-height:1.35}
+.tq .tqw b{display:block;color:var(--paper);font-size:14px;font-weight:600}
+.tq::after{content:"+";position:absolute;right:16px;top:16px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:500 22px/1 var(--body);background:rgba(255,255,255,.1);transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.tq:hover::after{transform:rotate(90deg)}
+.tq:active{transform:scale(.98)}
+.t7{align-items:flex-start!important;padding-right:28px!important}
+.t7 .n2{flex:0 0 auto;min-width:9ch}
+.proofs{list-style:none;margin:0;padding:0;flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 22px}
+.proofs li{font-size:14px;line-height:1.35;color:var(--dim);border-top:1.5px solid #3A3A44;padding-top:9px}
+.proofs b{display:block;color:var(--paper);font-size:15px;font-weight:600;margin-bottom:2px}
+@media (max-width:860px){.proofs{grid-template-columns:1fr 1fr;gap:12px 16px}.t7 .n2{width:100%}}
+@media (max-width:420px){.proofs{grid-template-columns:1fr}}
+
+/* section heads */
+.sh{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin:84px 0 22px}
+.sh h2{margin:0;font-size:clamp(40px,7.4vw,104px)}
+.sh p{margin:0;color:var(--dim);max-width:18em;text-align:right}
+
+/* stacking cases */
+.case{position:sticky;top:calc(16px + var(--i)*16px);border-radius:30px;padding:28px;margin-bottom:18px;min-height:340px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:22px 36px;align-items:end;box-shadow:0 -14px 40px rgba(0,0,0,.35)}
+.case .meta{font-weight:600;font-size:15px;display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:auto;grid-column:1/-1;align-self:start;justify-content:space-between}
+.case h3{margin:0 0 12px;font-size:clamp(38px,6vw,92px)}
+.case p{margin:0;font-size:clamp(18px,1.7vw,22px);max-width:22em;font-weight:500}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.stats div{border-top:2px solid currentColor;padding-top:8px}
+.stats b{display:block;font-family:var(--display);font-weight:800;font-stretch:105%;font-size:clamp(22px,2.6vw,34px);letter-spacing:-.02em;line-height:1.05}
+.stats span{font-size:14px;font-weight:500}
+.c1{background:#0056A3;color:#fff}.c1 .stats b{color:#FFDA57}
+.c2{background:#E23744;color:#fff}
+.c3{background:#F8F5F0;color:#3B241E}.c3 .stats div,.c3 .full{border-color:#D9B98C}
+.c4{background:var(--lime);color:#131A00}
+.case .meta{justify-content:flex-start}
+
+
+.full{grid-column:1/-1;border-top:2px solid currentColor;padding-top:4px}
+.full summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:16px;padding:10px 0}
+.full summary::-webkit-details-marker{display:none}
+.full summary i{font-style:normal;font-size:26px;line-height:1;transition:transform .3s cubic-bezier(.2,.8,.2,1)}
+.full[open] summary i{transform:rotate(45deg)}
+.fin{padding:4px 0 6px;max-width:62em}
+.fin .brief{font-size:17px;margin:0 0 14px;max-width:none}
+.fin ul{margin:0;padding-left:20px;display:grid;gap:8px;columns:1}
+.fin li{font-size:16px;line-height:1.45}
+@media (min-width:861px){.fin ul{grid-template-columns:1fr 1fr;column-gap:36px}}
+.fin{display:none}
+.pop .fin{display:block;padding:0}
+.pop .fin .pics{grid-template-columns:1fr 1fr}
+.pop .fin .pics img{aspect-ratio:3/4;border-radius:16px}
+.pop .fin ul{grid-template-columns:1fr;padding-left:20px}
+.pop .fin .brief{font-size:17px}
+.full summary:hover i{transform:rotate(90deg)}
+
+/* proof */
+.proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.col{background:var(--tile);border-radius:26px;padding:22px}
+.col h3{font-family:var(--display);font-weight:800;font-stretch:112%;text-transform:uppercase;font-size:20px;margin:0 0 8px;color:var(--lime)}
+.col ul{list-style:none;margin:0;padding:0}
+.col li{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid #2F2F37;transition:padding .2s,color .2s}
+.col li:hover{padding-left:8px;color:var(--lime)}
+.col li b{font-weight:500}
+.col li b small{display:block;color:var(--dim);font-size:14px;font-weight:400}
+.col li time{color:var(--dim);font-size:14px;white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* end */
+.end{margin-top:90px;padding:60px 0 40px;border-top:1px solid #2B2B32;text-align:left}
+.end h2{margin:0 0 26px;font-size:min(10.6vw,132px);white-space:nowrap}
+.end h2 em{font-style:normal;color:var(--lime)}
+.mailrow{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.mail{font-family:var(--display);font-weight:700;font-size:clamp(17px,2.6vw,32px);word-break:break-all}
+.copy{font:600 15px var(--body);background:var(--lime);color:#131A00;border:0;border-radius:999px;padding:11px 20px;cursor:pointer}
+.links{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:28px;color:var(--dim)}
+.links a{color:var(--paper)}
+
+html.js .rv{opacity:0;transform:translateY(30px) scale(.97);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+html.js .rv.seen{opacity:1;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+
+@media (max-width:860px){
+  body{font-size:16px}
+  .wrap{padding:0 14px}
+  .nav .pill span.x{display:none}.nav .pill span.y{display:inline}
+  h1{white-space:normal;font-size:16.4vw}
+  .end h2{white-space:normal;font-size:21vw}
+  .t2 small,.t3 small{padding-right:52px}
+  .t .n{font-size:clamp(30px,9.4vw,46px);white-space:nowrap}
+  .t1 .n{font-size:64px}
+  h1 .ln{display:block}
+  .me{order:0;width:132px}
+  .sub{margin-top:16px}
+  .bento{gap:10px}
+  .t{grid-column:span 6;min-height:170px;border-radius:22px;padding:16px}
+  .t1{grid-column:span 12;grid-row:auto;min-height:250px}
+  .t4,.t7{grid-column:span 12}
+  #mini{width:62%;right:-8%;bottom:-30%}
+  .bars{right:14px;top:14px;height:44px;gap:5px}.bars i{width:11px}
+  .ring{width:52px;height:52px;right:12px;top:12px}
+  .sh{margin:60px 0 16px;flex-direction:column;align-items:flex-start}
+  .sh p{text-align:left}
+  .case{grid-template-columns:minmax(0,1fr);padding:20px;border-radius:24px;min-height:0;top:calc(10px + var(--i)*12px);gap:16px}
+  .proof{grid-template-columns:minmax(0,1fr);gap:10px}
+  .field{margin:0 -14px;padding:4px 14px 14px;scroll-padding-left:14px}
+  .field figure{width:72vw}
+  .end{margin-top:60px;padding-top:40px}
+}
+@media (max-height:620px){.case{position:static}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}h1 .ln,.badge,.mq div,.dot{animation:none}.t,.swap span{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <span class="pill"><i class="dot"></i><span class="x">Open to category and growth roles from 2027</span><span class="y">Open to roles</span></span>
+    <span class="navr"><a class="btn ghost" href="files/Ishaan_Jain_CV.pdf" download="Ishaan_Jain_CV.pdf" type="application/pdf" data-cv aria-label="Download my CV"><span class="lg2">Download my CV</span><span class="sm2">CV ↓</span></a><a class="btn" href="#contact" aria-label="Get in touch"><span class="lg2">Get in touch</span><span class="sm2">Contact</span></a></span>
+  </nav>
+
+  <header class="hero">
+    <div class="nb">
+      <p class="hi">Hi, I'm</p>
+      <h1 class="d" id="name"><span class="ln">Ishaan</span> <span class="ln">Jain</span></h1>
+      <p class="grow">I grow <span class="swap" aria-hidden="true"><span id="sw">brands</span></span><span style="position:absolute;left:-9999px">brands, categories, markets and revenue</span></p>
+      <img class="cut" src="img/cutout.webp" alt="Ishaan Jain" width="944" height="900" fetchpriority="high">
+    </div>
+    <p class="blurb">Three years in growth and international business. worked across Linc's 50+ export markets from the Founder's Office, ran Kolkata's biggest dining accounts at Zomato, and started two brands of my own. Now an MBA candidate at Masters' Union, looking for category, growth and commercial roles in consumer companies.</p>
+  </header>
+</div>
+
+<div class="mq" aria-hidden="true"><div><span>Linc</span><span>Zomato</span><span>ORA Perfumes</span><span>Masters' Union</span><span>50+ countries</span><span>Key accounts</span><span>Trade marketing</span><span>D2C</span><span>Linc</span><span>Zomato</span><span>ORA Perfumes</span><span>Masters' Union</span><span>50+ countries</span><span>Key accounts</span><span>Trade marketing</span><span>D2C</span></div></div>
+
+<div class="wrap">
+  <section class="bento" aria-label="Headline results">
+    <article data-tile="t1" tabindex="0" role="button" aria-haspopup="dialog" class="t t1 rv"><canvas id="mini" aria-hidden="true"></canvas><small>Export markets I worked across at Linc</small><div class="n"><span data-n="50">50</span>+</div></article>
+    <article data-tile="t2" tabindex="0" role="button" aria-haspopup="dialog" class="t t2 rv" style="--d:.06s"><div class="bars" aria-hidden="true"><i style="--h:35%;--d:.1s"></i><i style="--h:62%;--d:.2s"></i><i style="--h:100%;--d:.3s"></i></div><small>Revenue added at Linc in three quarters</small><div class="n odo" aria-label="₹2 Cr+"><span class="ov" aria-hidden="true">₹2 Cr+</span></div></article>
+    <article data-tile="t3" tabindex="0" role="button" aria-haspopup="dialog" class="t t3 rv" style="--d:.12s"><svg class="ring" viewBox="0 0 80 80" aria-hidden="true"><circle class="bgc" cx="40" cy="40" r="32"/><circle class="fg" cx="40" cy="40" r="32"/></svg><small>Of target at Zomato, across my full tenure</small><div class="meter" aria-hidden="true"><i><b></b><em>Sep 2023</em><em class="r">Mar 2025</em></i></div><div class="n"><span data-n="100">100</span>%</div></article>
+    <article data-tile="t4" tabindex="0" role="button" aria-haspopup="dialog" class="t t4 rv" style="--d:.06s"><svg class="spark" viewBox="0 0 300 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0,92 C50,90 70,80 110,70 S170,58 200,36 S270,14 300,6"/></svg><small>ORA Perfumes, zero to this in eight weeks</small><div class="n">₹<span data-n="2.5" data-f="1">2.5</span> L+</div></article>
+    <article class="t t5 rv tq" tabindex="0" role="button" aria-haspopup="dialog" data-rec="1" style="--d:.12s"><span class="qm2" aria-hidden="true">“</span><p class="tqt">Despite his young age, he demonstrates a level of maturity and strategic thinking that's truly impressive.</p><span class="tqw"><b>Ankur Tewari</b>Head of Sales, Ex Ferrero, Cadbury</span></article>
+    <article data-tile="t6" tabindex="0" role="button" aria-haspopup="dialog" class="t t6 rv"><span class="lab" style="color:#E6E6EC">Right now</span><div class="n2 d" style="font-size:clamp(22px,2.4vw,32px);font-stretch:112%">MBA at Masters' Union<br><span style="color:var(--lime)">Merit scholar</span></div></article>
+    <article class="t t7 rv" style="--d:.06s"><div class="n2">Good at,<br>with proof</div><ul class="proofs">
+      <li><b>Category growth</b>₹2 Cr+ from three new lines at Linc</li>
+      <li><b>Key accounts</b>100% of target at Zomato, full tenure</li>
+      <li><b>Trade marketing</b>Listed at Lulu, Carrefour, Jumbo, Public</li>
+      <li><b>Go-to-market</b>ORA to ₹2.5 L+ in eight weeks</li>
+      <li><b>International business</b>Across Linc's 50+ export markets</li>
+      <li><b>D2C</b>Shopify store and pop-ups for ORA</li>
+    </ul></article>
+  </section>
+
+  <div class="sh"><h2 class="d">Work</h2><p>Four chapters. Open any one for the full story.</p></div>
+  <section aria-label="Work">
+    <article class="case c1" style="--i:0">
+      <div class="meta"><span>Founder's Office, 2025 to 2026</span></div>
+      <div><h3 class="d hl"><img class="lg lg-linc" src="img/logo-linc.png" alt="Linc" width="337" height="109"></h3><p>Worked in the Founder's Office across Linc's 50+ export markets, and got three product lines onto the biggest shelves in the UAE and Greece.</p></div>
+      <div class="stats"><div><b>₹2 Cr+</b><span>in three quarters</span></div><div><b>4 chains</b><span>Lulu, Carrefour, Jumbo, Public</span></div><div><b>₹35 L</b><span>saved on expos</span></div><div><b>10,000+</b><span>footfall per expo</span></div></div>
+    
+      <details class="full"><summary><span>Full story</span><i aria-hidden="true">+</i></summary><div class="fin"><div class="pics"><img loading="lazy" src="img/expo.jpg" alt="At the Linc trade show stand"><img loading="lazy" src="img/wall.jpg" alt="50 Years of Linc wall" style="object-position:center 20%"></div><p class="brief"><b>The brief.</b> Three new product lines needed buyers and shelf space in markets abroad.</p><ul><li>Generated ₹2 Cr+ in three quarters from new launches across Linc's export markets.</li><li>Worked in the Founder's Office, taking on whatever any of Linc's 50+ markets needed, as the founder directed.</li><li>Launched Pentonic Pastel, Pentonic CLR and the Linc Dust Free Eraser across APAC, MEA, Europe and LATAM.</li><li>Won shelf space at Lulu and Carrefour in the UAE, and Jumbo and Public in Greece.</li><li>Customised packaging for the UAE, Greece, Lebanon and Yemen.</li><li>Ran ATL, BTL and digital campaigns in Indonesia, the UAE, Greece, Brazil and Oman.</li><li>Designed the 50 Years of Linc campaign end to end. It became the global standard.</li><li>Led trade shows on three continents, with 100+ leads at each expo, and saved ₹35 lakh on exhibition costs.</li><li>Set up 120+ dealer boards across Jakarta and Oman and launched distributor social channels.</li></ul></div></details>
+    </article>
+    <article class="case c2" style="--i:1">
+      <div class="meta"><span>Key Accounts Manager, 2023 to 2025</span></div>
+      <div><h3 class="d hl"><img class="lg lg-zom" src="img/logo-zomato.png" alt="Zomato" width="1054" height="225"></h3><p>Ran the highest-grossing dining ads portfolio in Kolkata and hit 100% of target across my full tenure.</p></div>
+      <div class="stats"><div><b>23%</b><span>of city dining GMV</span></div><div><b>100%</b><span>target attainment</span></div><div><b>7 to 10x</b><span>ROAS for partners</span></div><div><b>90%+</b><span>clients retained</span></div></div>
+    
+      <details class="full"><summary><span>Full story</span><i aria-hidden="true">+</i></summary><div class="fin"><p class="brief"><b>The brief.</b> Kolkata's dining partners needed more diners and better returns on their ad spend.</p><ul><li>Generated 23% of Kolkata dining GMV and 20% of dining ads revenue, the highest in the city.</li><li>One of 12 on the team to reach 100% target attainment across the whole tenure.</li><li>Delivered 7 to 10x average ROAS on in-app ad campaigns.</li><li>Solely led the 2024 Zomato Gold Dining Carnival for Kolkata, with 300+ restaurants.</li><li>Grew partner revenue 10x for Just Baked (50+ outlets) and 10 Downing Street.</li><li>Retained 90%+ of dining ad clients through cross-selling and upselling.</li><li>As an intern, onboarded 100+ restaurants on Zomato Pay, a team record, and got the first full-time offer made to a Kolkata dining intern.</li></ul></div></details>
+    </article>
+    <article class="case c3" style="--i:2">
+      <div class="meta"><span>Co-founder, 2026, alongside the MBA</span></div>
+      <div><h3 class="d hl"><img class="lg lg-ora" src="img/logo-ora.png" alt="ORA Perfumes" width="447" height="474"></h3><p>Co-founded a perfume brand during a full-time MBA. It sells online and at pop-ups.</p></div>
+      <div class="stats"><div><b>₹2.5 L+</b><span>in eight weeks</span></div><div><b>8 SKUs</b><span>four scents, made in-house</span></div><div><b>50+</b><span>bottles sold in one day</span></div><div><b>2 channels</b><span>Shopify and pop-ups</span></div></div>
+    
+      <details class="full"><summary><span>Full story</span><i aria-hidden="true">+</i></summary><div class="fin"><div class="pics"><img loading="lazy" src="img/ora1.jpg" alt="ORA pop-up stall"><img loading="lazy" src="img/ora2.jpg" alt="Ishaan at an ORA pop-up" style="object-position:center 35%"></div><p class="brief"><b>The brief.</b> Could a bootstrapped perfume brand sell while its founders do a full-time MBA?</p><ul><li>Took the brand from zero to ₹2.5 lakh+ in eight weeks.</li><li>Launched four scents and eight SKUs at 25%+ oil concentration, with manufacturing and quality checks in-house.</li><li>Built a Shopify store and offline pop-ups, and owned the acquisition and conversion funnel.</li><li>Sold 50+ bottles face to face in one day at DLF CyberHub.</li><li>Was offered a listing in the Masters' Union merch store.</li></ul></div></details>
+    </article>
+    <article class="case c4" style="--i:3">
+      <div class="meta"><span>Founder, 2020 to 2023, through college</span></div>
+      <div><h3 class="d">Door Step</h3><p>Bootstrapped a cross-border e-commerce store selling into Europe.</p></div>
+      <div class="stats"><div><b>₹35 L+</b><span>revenue</span></div><div><b>4 countries</b><span>Germany, France, Italy, UK</span></div></div>
+    
+      <details class="full"><summary><span>Full story</span><i aria-hidden="true">+</i></summary><div class="fin"><p class="brief"><b>The brief.</b> Selling to shoppers in Europe from Kolkata, while still a student.</p><ul><li>Bootstrapped a cross-border e-commerce venture to ₹35 lakh+ in revenue.</li><li>Sold into Germany, France, Italy and the UK.</li><li>Chose products through market research and competitor gap analysis.</li><li>Ran it for three years alongside a B.Com (Hons) at St. Xavier's University.</li></ul></div></details>
+    </article>
+  </section>
+
+  <div class="sh"><h2 class="d">In the field</h2><p>Tap a photo to see it full size.</p></div>
+  <section class="field" aria-label="Photos">
+    <figure data-ph="expo"><div class="fr"><img loading="lazy" src="img/expo.jpg" alt="Ishaan with visitors at the Linc stand at a trade show"></div><figcaption><b>Linc, trade show</b>Meeting buyers at the Linc stand.</figcaption></figure>
+    <figure data-ph="wall"><div class="fr"><img loading="lazy" src="img/wall.jpg" alt="The 50 Years of Linc wall on a trade show stand"></div><figcaption><b>Linc, 50 years</b>The 50 Years of Linc campaign on the stand.</figcaption></figure>
+    <figure data-ph="pepperfry"><div class="fr"><img loading="lazy" src="img/pepperfry.jpg" alt="Ishaan holding the One Day Challenge Winner trophy at Masters' Union"></div><figcaption><b>Masters' Union</b>Winning the Pepperfry Consumer Behaviour One Day Challenge.</figcaption></figure>
+    <figure data-ph="ora1"><div class="fr"><img loading="lazy" src="img/ora1.jpg" alt="Ishaan at the Gourmand ORA Fragrances pop-up stall"></div><figcaption><b>ORA Perfumes</b>Running our pop-up stall.</figcaption></figure>
+    <figure data-ph="ora2"><div class="fr"><img loading="lazy" src="img/ora2.jpg" alt="Ishaan holding an ORA bottle at another pop-up"></div><figcaption><b>ORA Perfumes</b>Another pop-up, another crowd.</figcaption></figure>
+  </section>
+
+<div class="sh"><h2 class="d">In their words</h2><p>Recommendations from my LinkedIn, word for word.</p></div>
+  <section class="recs" aria-label="LinkedIn recommendations">
+    <div class="rtrack" id="rtrack">
+    <figure class="rec" data-r="0"><div class="qm" aria-hidden="true">“</div><blockquote>What stood out most was his ability to manage multiple international market requirements with clarity, professionalism, and attention to detail.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">MS</span><span><b>Mayank Sagar</b><small>Assistant Marketing Manager @ Linc (Pentonic)</small><small class="rl">Worked with Ishaan on the same team, May 2026</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="1"><div class="qm" aria-hidden="true">“</div><blockquote>Despite his young age, he demonstrates a level of maturity and strategic thinking that&#x27;s truly impressive.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">AT</span><span><b>Ankur Tewari</b><small>Head of Sales, Ex Ferrero | Aircel | Cadbury</small><small class="rl">Senior to Ishaan, but didn&#x27;t manage him directly, June 2026</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="2"><div class="qm" aria-hidden="true">“</div><blockquote>His approach to stakeholder and partner relationships remains his strong suit, thinking always from a customer-first approach.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">MP</span><span><b>Madhav Poddar</b><small>ISB Co’27 | Founding Member, Pyvot | Ex-Zomato</small><small class="rl">Worked with Ishaan on the same team, April 2025</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="3"><div class="qm" aria-hidden="true">“</div><blockquote>I can confidently say he is a top-tier sales and account management professional.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">HS</span><span><b>Harman Singh</b><small>Key Accounts Manager at Toprankers | Ex-Zomato</small><small class="rl">Worked with Ishaan on the same team, March 2025</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="4"><div class="qm" aria-hidden="true">“</div><blockquote>Ishaan is a powerhouse of energy—diligent, proactive, and always on the move!</blockquote>
+      <figcaption><span class="av" aria-hidden="true">PJ</span><span><b>Palak Jain</b><small>Social Media @ District By Zomato</small><small class="rl">Worked with Ishaan on different teams, March 2025</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="5"><div class="qm" aria-hidden="true">“</div><blockquote>With an impeccable eye for detail and a natural inclination for analytical thinking, Ishaan consistently impressed me.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">VK</span><span><b>Dr. Vivek K. Verma</b><small>Assistant Professor, Program Co-Ordinator</small><small class="rl">Was Ishaan’s teacher, July 2023</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="6"><div class="qm" aria-hidden="true">“</div><blockquote>Ishaan is an asset to any organization with excellent Managerial &amp; Leadership skills.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">BR</span><span><b>Bidisha Roy</b><small>Heading Entrepreneurship &amp; Incubation, Amity University | Former Executive Director, St. Xavier’s University</small><small class="rl">Was Ishaan’s mentor, May 2023</small></span></figcaption>
+      <button class="readall">Read the full recommendation</button></figure>
+    <figure class="rec" data-r="7"><div class="qm" aria-hidden="true">“</div><blockquote>Ishaan is a smart and hard worker who is good at multi-tasking and team handling.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">CD</span><span><b>Carmel De Rosario</b><small>Senior Human Resources Executive at Infiflex Technologies</small><small class="rl">Was Ishaan’s client, March 2023</small></span></figcaption>
+      </figure>
+    <figure class="rec" data-r="8"><div class="qm" aria-hidden="true">“</div><blockquote>Ishaan is disciplined and functions very well under pressure.</blockquote>
+      <figcaption><span class="av" aria-hidden="true">SW</span><span><b>Shania Williams</b><small>Business Development Executive at Accops</small><small class="rl">Was Ishaan’s client, March 2023</small></span></figcaption>
+      </figure>
+    </div>
+    <div class="rnav"><button class="rarr" id="rprev" aria-label="Previous recommendation">←</button><button class="rarr" id="rnext" aria-label="Next recommendation">→</button><a class="rli" href="https://www.linkedin.com/in/ishaan-jain-b99033201/details/recommendations/" target="_blank" rel="noopener">See them on LinkedIn</a></div>
+  </section>
+
+    <div class="sh"><h2 class="d">Proof</h2><p>Where I studied, what I led, what I won.</p></div>
+  <section class="proof">
+    <div class="col rv"><h3>Studied</h3><ul>
+      <li><b>Masters' Union<small>PGP TBM, merit scholar (20 of 400+)</small></b><time>2026 to now</time></li>
+      <li><b>St. Xavier's University<small>B.Com (Hons), 7.85 CGPA</small></b><time>2020 to 23</time></li>
+      <li><b>DPS Megacity<small>ISC 90.5%, ICSE 91.6%</small></b><time>to 2020</time></li></ul></div>
+    <div class="col rv" style="--d:.08s"><h3>Led</h3><ul>
+      <li><b>FoCoS Club<small>Core member, 1 of 9</small></b><time>2026 to 27</time></li>
+      <li><b>Xavier's Commerce Society<small>Treasurer, raised ₹10 lakh+</small></b><time>2022 to 23</time></li>
+      <li><b>Leo Club, Sealdah<small>President, 5,000+ people fed</small></b><time>2021 to 22</time></li></ul></div>
+    <div class="col rv" style="--d:.16s"><h3>Won</h3><ul>
+      <li><b>Pepperfry challenge<small>1st of 50 teams</small></b><time>2026</time></li>
+      <li><b>SRCC Business Conclave<small>Top 10 of 500+</small></b><time>2023</time></li>
+      <li><b>UMANG and Managedia<small>1st in finance, twice</small></b><time>2022</time></li></ul></div>
+  </section>
+
+  <footer class="end" id="contact">
+    <h2 class="d" id="talk">Let's <em>talk</em></h2>
+    <div class="mailrow"><span class="mail" id="mail">ishaan.jain2027@mastersunion.org</span><button class="copy" id="copy" type="button">Copy email</button></div>
+    <div class="links">
+      <a href="mailto:ishaan.jain2027@mastersunion.org">Send an email</a>
+      <a href="files/Ishaan_Jain_CV.pdf" download="Ishaan_Jain_CV.pdf" type="application/pdf" id="cvdl" data-cv>Download my CV</a>
+      <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/ishaan-jain-b99033201/">LinkedIn</a>
+      <a target="_blank" rel="noopener" href="https://www.oraperfumes.in/">ORA Perfumes</a>
+      <a target="_blank" rel="noopener" href="https://omnispendtracker.lovable.app/">OmniSpend AI</a>
+    </div>
+  </footer>
+</div>
+
+<dialog class="pop" id="pop" aria-labelledby="popt"><button class="x" id="popx" aria-label="Close">✕</button><div class="pin" id="pin"></div></dialog>
+<script>
+(function(){
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+const $=id=>document.getElementById(id);
+/* name stretches with the cursor */
+const nm=$('name');
+if(fine&&!reduce){let on=false;setTimeout(()=>on=true,1500);
+  addEventListener('pointermove',e=>{if(!on)return;const r=nm.getBoundingClientRect();if(e.clientY>r.bottom+260)return;
+    nm.querySelectorAll('.ln').forEach(l=>{const b=l.getBoundingClientRect(),d=Math.min(1,Math.abs(e.clientX-(b.left+b.width/2))/(innerWidth*.6));l.style.fontStretch=(125-d*45)+'%';l.style.animation='none';l.style.transition='font-stretch .25s';});});}
+/* swapping word */
+const words=['brands','categories','markets','revenue'];let wi=0;const sw=$('sw');
+if(!reduce)setInterval(()=>{sw.style.transform='translateY(-100%)';setTimeout(()=>{wi=(wi+1)%words.length;sw.textContent=words[wi];sw.style.transition='none';sw.style.transform='translateY(100%)';void sw.offsetWidth;sw.style.transition='';sw.style.transform='none';},480);},2200);
+/* clock */
+function tick(){try{$('clock').textContent=new Intl.DateTimeFormat('en-IN',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'Asia/Kolkata'}).format(new Date());}catch(e){}}
+tick();setInterval(tick,15000);
+/* count up */
+function count(el){const end=parseFloat(el.dataset.n),f=+el.dataset.f||0,dur=1600,t0=performance.now(),tile=el.closest('.t');(function s(t){const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,4);el.textContent=(end*e).toFixed(f);if(k<1)requestAnimationFrame(s);else{el.textContent=el.dataset.end||end.toFixed(f);if(tile){tile.classList.remove('landed');void tile.offsetWidth;tile.classList.add('landed');}}})(t0);}
+
+/* ₹0 L → ₹200 L, then flip to ₹2 Cr+ */
+function odo(tile){const ov=tile.querySelector('.odo .ov');if(!ov||reduce)return;const dur=1500,t0=performance.now();let last=-1;
+  (function s(t){const k=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-k,3),v=Math.round(200*e/5)*5;
+    if(v!==last){last=v;ov.textContent='₹'+v+' L';ov.classList.remove('tick');void ov.offsetWidth;ov.classList.add('tick');}
+    if(k<1)requestAnimationFrame(s);
+    else setTimeout(()=>{ov.classList.remove('tick');ov.classList.add('out');setTimeout(()=>{ov.textContent='₹2 Cr+';ov.classList.remove('out');ov.classList.add('in');tile.classList.remove('landed');void tile.offsetWidth;tile.classList.add('landed');},280);},250);})(t0);}
+
+/* reveal */
+if(!reduce&&'IntersectionObserver' in window){document.documentElement.classList.add('js');
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');e.target.querySelectorAll('[data-n]').forEach(count);if(e.target.querySelector('.odo'))odo(e.target);io.unobserve(e.target);}}),{rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.rv').forEach(n=>io.observe(n));}
+/* tilt */
+if(fine&&!reduce)document.querySelectorAll('.t').forEach(t=>{t.addEventListener('pointermove',e=>{const r=t.getBoundingClientRect();t.style.setProperty('--ry',((e.clientX-r.left)/r.width-.5)*7+'deg');t.style.setProperty('--rx',(.5-(e.clientY-r.top)/r.height)*7+'deg');});
+  t.addEventListener('pointerleave',()=>{t.style.setProperty('--rx','0deg');t.style.setProperty('--ry','0deg');});});
+/* mini globe */
+const RLE="Z2j535Z1g1522a72Z164111347e1311a21712f111224a52q3f121131ay523843b1211o32df921s21gbcuibc31112221f21iad2461d11n7e5112hp421dd1dr1ha1429t2fe4222Z1cc6142y49de1v6c7b112w7b6c11141s9a5d251s7b5i111t6a611e5t6b421d7s4d4g8r4e2h223r4Z132r2Z16141m2Z1y1Z601n24du19Z116h9Z138j1Z183Z20",MW=72,MH=36,land=[];
+RLE.replace(/Z(..)|(.)/g,(m,a,b)=>{const n=parseInt(a||b,36),v=land.flip?1:0;for(let k=0;k<n;k++)land.push(v);land.flip=!land.flip;});
+const D=Math.PI/180,dots=[];for(let lat=-58;lat<=80;lat+=3){const n=Math.max(1,Math.round(Math.cos(lat*D)*120));for(let k=0;k<n;k++){const lon=-180+k*360/n,x=Math.min(MW-1,Math.floor((lon+180)/360*MW)),y=Math.min(MH-1,Math.floor((90-lat)/180*MH));if(land[y*MW+x])dots.push([lon*D,lat*D]);}}
+const cv=$('mini'),ctx=cv.getContext('2d');let lam=1.2,vis=true;
+function g(){const dpr=Math.min(2,devicePixelRatio||1),W=cv.clientWidth;if(cv.width!==Math.round(W*dpr)){cv.width=cv.height=Math.round(W*dpr);}
+  ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,W);const R=W*.48,ph=.35;
+  ctx.beginPath();ctx.arc(W/2,W/2,R,0,7);ctx.fillStyle='rgba(255,255,255,.08)';ctx.fill();ctx.fillStyle='#fff';
+  for(const d of dots){const cl=Math.cos(d[1]),x=cl*Math.sin(d[0]-lam),y=Math.sin(d[1]),z=cl*Math.cos(d[0]-lam),y2=y*Math.cos(ph)-z*Math.sin(ph),z2=y*Math.sin(ph)+z*Math.cos(ph);
+    if(z2>0){ctx.globalAlpha=.25+.75*z2;ctx.beginPath();ctx.arc(W/2+R*x,W/2-R*y2,Math.max(1,R/85)*(.6+.6*z2),0,7);ctx.fill();}}
+  ctx.globalAlpha=1;}
+function loop(){if(vis){lam+=.004;g();}requestAnimationFrame(loop);}
+if(reduce){g();addEventListener('resize',g);}else{if('IntersectionObserver' in window)new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);loop();}
+
+/* tile pop-ups */
+const P={
+t1:{img:['img/expo.jpg','center 35%','At the Linc stand, meeting buyers at a trade show.'],bg:'#0056A3',c:'#FFFFFF',lab:'Linc Limited, Founder\'s Office, March 2025 to June 2026',h:'50+',lead:'Linc sells in 50+ countries. Working in the Founder\'s Office, I took on whatever any of those markets needed, as the founder directed.',
+ g:[['4','regions: APAC, MEA, Europe, LATAM'],['4','retail chains won'],['4','markets with custom packaging']],
+ s:[['Where I worked on the ground',['UAE: shelf space at Lulu and Carrefour, custom packaging, campaigns.','Greece: listings at Jumbo and Public, custom packaging, campaigns.','Indonesia and Oman: ATL, BTL and digital campaigns, and 120+ dealer boards across Jakarta and Oman.','Brazil: campaigns for new launches.','Lebanon and Yemen: packaging customised for each market.']],
+ ['How I ran it',['Led trade shows on three continents, with 10,000+ footfall and 100+ leads at each expo.','Launched social channels for distributors.','Saved ₹35 lakh on exhibition costs through vendor negotiation.']]]},
+t2:{img:['img/wall.jpg','center 30%','The 50 Years of Linc campaign on a trade show stand.'],bg:'#FFDA57',c:'#0056A3',lab:'Linc Limited, three quarters',h:'₹2 Cr+',lead:'Revenue from the new product lines I took to market across Linc\'s export markets.',
+ g:[['3','product lines'],['3','quarters'],['5','markets with campaigns']],
+ s:[['What sold',['Pentonic Pastel','Pentonic CLR','Linc Dust Free Eraser']],
+ ['What drove it',['Won shelf space at Lulu, Carrefour, Jumbo and Public.','Ran ATL, BTL and digital campaigns in Indonesia, the UAE, Greece, Brazil and Oman.','Designed the 50 Years of Linc campaign end to end. It became the global standard.','Set up 120+ dealer boards across Jakarta and Oman.']]],tagsFirst:true},
+t3:{bg:'#E23744',c:'#FFFFFF',lab:'Zomato (Eternal Limited), September 2023 to March 2025',h:'100%',lead:'Target attainment across my whole tenure as Key Accounts Manager for Kolkata dining. One of 12 on the team to do it.',
+ g:[['23%','of Kolkata dining GMV'],['20%','of dining ads revenue'],['7 to 10x','average ROAS'],['90%+','ad clients retained']],
+ s:[['How I got there',['Solely led the 2024 Zomato Gold Dining Carnival for Kolkata, with 300+ restaurants.','Grew partner revenue 10x for Just Baked (50+ outlets) and 10 Downing Street.','Kept clients through cross-selling and upselling.']],
+ ['Before that, as an intern',['Onboarded 100+ restaurants on Zomato Pay, a team record.','Got the first full-time offer made to a Kolkata dining intern.']]]},
+t4:{img:['img/ora1.jpg','center 40%','Our ORA pop-up stall.',1],bg:'#F8F5F0',c:'#3B241E',lab:'ORA Perfumes, co-founder, 2026',h:'₹2.5 L+',lead:'Revenue in the first eight weeks of a bootstrapped D2C fragrance brand, built alongside a full-time MBA.',
+ g:[['4','scents'],['8','SKUs'],['25%+','oil concentration'],['50+','bottles sold in one day']],
+ s:[['What we built',['All manufacturing and quality checks in-house.','Two channels: a Shopify store and offline pop-ups.','I owned the acquisition and conversion funnel.']],
+ ['Moments',['Sold 50+ bottles face to face in one day at DLF CyberHub.','Offered a listing in the Masters\' Union merch store.']]],go:['https://www.oraperfumes.in/','Visit oraperfumes.in']},
+t5:{img:['img/head.jpg','center 30%',''],bg:'#1C1C21',c:'#F4F0E6',lab:'Gurgaon, India',h:'Say hi',lead:'I am in Gurgaon for my MBA. Email is the fastest way to reach me, and I usually reply the same day.',
+ g:[['IST','UTC +5:30'],['Class of','2027']],
+ s:[['Reach me',['ishaan.jain2027@mastersunion.org','LinkedIn: ishaan-jain-b99033201']]],go:['mailto:ishaan.jain2027@mastersunion.org','Send an email']},
+t6:{img:['img/pepperfry.jpg','center 25%','Winning the Pepperfry Consumer Behaviour One Day Challenge.'],bg:'#1C1C21',c:'#F4F0E6',lab:'Masters\' Union, Gurgaon, 2026 to 2027',h:'MBA',lead:'PGP in Technology and Business Management, on a merit scholarship.',
+ g:[['20 of 400+','merit scholars'],['1st','of 50 teams, Pepperfry'],['1 of 9','FoCoS Club core members']],
+ s:[['What I have done so far',['Won the Pepperfry Consumer Behaviour challenge with a 180-day action plan built from audits of nine stores.','Organised Founder Offline and NUCLEUS for the FoCoS Club, with a Park+ founder\'s office speaker and a five-person industry panel.','Built OmniSpend AI, a spend tracker that reads bank alerts and sorts spending automatically.','Co-founded ORA Perfumes.']]],go:['https://omnispendtracker.lovable.app/','Open OmniSpend AI']},
+t7:{bg:'#1C1C21',c:'#F4F0E6',lab:'Skills, with proof',h:'Good at',lead:'What I do well, and where I have done it.',
+ s:[['Category growth',['₹2 Cr+ from three new product lines at Linc in three quarters.']],['Key accounts',['23% of Kolkata dining GMV and 100% of target at Zomato.']],['Trade marketing',['Shelf space at Lulu, Carrefour, Jumbo and Public. 120+ dealer boards.']],['Go-to-market',['Four scents and eight SKUs to ₹2.5 lakh+ in eight weeks at ORA.']],['International business',['Worked across Linc\'s 50+ export markets from the Founder\'s Office. Sold into four European countries with Door Step Essentials.']],['D2C',['A Shopify store and pop-ups for ORA. Cross-border e-commerce from Kolkata.']],['Tools',['Microsoft 365, Google AI Studio, e-commerce operations, SEO.']]]}
+};
+const pop=$('pop'),pin=$('pin');let from=null;
+function openTile(t){const d=P[t.dataset.tile];from=t;
+  pop.style.setProperty('--pb',d.bg);pop.style.setProperty('--pc',d.c);
+  const r=t.getBoundingClientRect();pop.style.setProperty('--ox',(r.left+r.width/2-innerWidth/2)+'px');pop.style.setProperty('--oy',(r.top+r.height/2-innerHeight/2)+'px');
+  pop.classList.remove('photo');pin.innerHTML=(d.img?'<figure class="ph'+(d.img[3]?' wide':'')+'" style="--src:url('+d.img[0]+')"><img src="'+d.img[0]+'" alt="" style="object-position:'+d.img[1]+'"></figure>'+(d.img[2]?'<p class="cap">'+d.img[2]+'</p>':''):'')+'<p class="lab2">'+d.lab+'</p><h2 class="d" id="popt">'+d.h+'</h2><p class="lead">'+d.lead+'</p>'+
+   (d.g?'<div class="grid">'+d.g.map(x=>'<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')+'</div>':'')+
+   d.s.map((x,i)=>'<h4>'+x[0]+'</h4>'+(d.tagsFirst&&i===0?'<div class="tags">'+x[1].map(y=>'<span>'+y+'</span>').join('')+'</div>':'<ul>'+x[1].map(y=>'<li>'+y+'</li>').join('')+'</ul>')).join('')+
+   (d.go?'<a class="go" href="'+d.go[0]+'"'+(d.go[0].startsWith('http')?' target="_blank" rel="noopener"':'')+'><span>'+d.go[1]+'</span></a>':'');
+  pin.scrollTop=0;pop.classList.remove('closing');pop.showModal();}
+$('popx').addEventListener('click',closePop);
+function openPhoto(f){from=f;const im=f.querySelector('img'),c=f.querySelector('figcaption');pop.style.setProperty('--pb','#0b0b0d');pop.style.setProperty('--pc','#F4F0E6');
+  const r=f.getBoundingClientRect();pop.style.setProperty('--ox',(r.left+r.width/2-innerWidth/2)+'px');pop.style.setProperty('--oy',(r.top+r.height/2-innerHeight/2)+'px');
+  pop.classList.add('photo');pin.innerHTML='<img src="'+im.getAttribute('src')+'" alt="'+im.alt+'"><p id="popt">'+c.innerHTML.replace('</b>',':</b> ')+'</p>';pop.classList.remove('closing');pop.showModal();}
+document.querySelectorAll('.field figure').forEach(f=>{f.tabIndex=0;f.setAttribute('role','button');f.addEventListener('click',()=>openPhoto(f));f.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPhoto(f);}});});
+function closePop(){if(!pop.open)return;if(reduce){pop.close();return;}pop.classList.add('closing');setTimeout(()=>{pop.classList.remove('closing');pop.close();},210);}
+pop.addEventListener('cancel',e=>{e.preventDefault();closePop();});
+pop.addEventListener('click',e=>{if(e.target===pop)closePop();});
+pop.addEventListener('close',()=>{from&&from.focus({preventScroll:true});});
+document.querySelectorAll('[data-tile]').forEach(t=>{t.addEventListener('click',()=>openTile(t));t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openTile(t);}});});
+
+
+/* work cases open in the pop-up */
+const CC={c1:['#0056A3','#FFFFFF'],c2:['#E23744','#FFFFFF'],c3:['#F8F5F0','#3B241E'],c4:['#C9F250','#131A00']};
+function openCase(c){const k=[...c.classList].find(x=>CC[x]);from=c.querySelector('summary');
+  pop.style.setProperty('--pb',CC[k][0]);pop.style.setProperty('--pc',CC[k][1]);
+  const r=c.getBoundingClientRect();pop.style.setProperty('--ox','0px');pop.style.setProperty('--oy',(r.top+r.height/2-innerHeight/2)+'px');
+  const h3=c.querySelector('h3'),hasLogo=!!h3.querySelector('img'),m=[...c.querySelectorAll('.meta>span')].map(x=>x.textContent).join(', '),t=hasLogo?h3.innerHTML:h3.textContent,lead=c.querySelector('h3+p').textContent;
+  const st=[...c.querySelectorAll('.stats>div')].map(d=>'<div><b>'+d.querySelector('b').textContent+'</b><span>'+d.querySelector('span').textContent+'</span></div>').join('');
+  pop.classList.remove('photo');pin.innerHTML='<p class="lab2" style="padding-right:44px">'+m+'</p><h2 class="d'+(hasLogo?' hl':'')+'" id="popt">'+t+'</h2><p class="lead">'+lead+'</p><div class="grid">'+st+'</div><div class="fin">'+c.querySelector('.fin').innerHTML+'</div>';
+  pin.scrollTop=0;pop.classList.remove('closing');pop.showModal();}
+document.querySelectorAll('.case .full summary').forEach(sm=>{sm.setAttribute('aria-haspopup','dialog');sm.addEventListener('click',e=>{e.preventDefault();openCase(sm.closest('.case'));});});
+
+
+/* CV download: inside the Claude viewer use the downloads capability, elsewhere the plain link works */
+(function(){const links=[...document.querySelectorAll('[data-cv]')];if(!links.length)return;let dl=null;
+  try{if(window.claude&&typeof window.claude.use==='function')window.claude.use('downloads').then(n=>{dl=n;}).catch(()=>{});}catch(_){}
+  links.forEach(a=>a.addEventListener('click',async e=>{if(!dl)return;e.preventDefault();const t=a.textContent;
+    try{const r=await fetch(a.getAttribute('href'));const blob=await r.blob();await dl.save({filename:'Ishaan_Jain_CV.pdf',data:blob});}
+    catch(err){if(err&&err.code&&err.code!=='declined'){a.textContent='Download unavailable here';setTimeout(()=>a.textContent=t,2500);}}}));})();
+
+/* recommendations */
+const RECS=[{"n": "Mayank Sagar", "t": "Assistant Marketing Manager @ Linc (Pentonic)", "r": "Worked with Ishaan on the same team", "d": "May 2026", "x": "I had the pleasure of working closely with Ishaan Jain during our time at Linc, where he handled the Export Division as Deputy Manager – International Marketing. Ishaan brings a strong blend of strategic thinking, market understanding, and execution capability to the table. What stood out most was his ability to manage multiple international market requirements with clarity, professionalism, and attention to detail. He has a calm and solution-oriented approach, especially during high-pressure situations and tight timelines.\n\nHis understanding of brand communication, coordination with cross-functional teams, and ability to maintain strong relationships with stakeholders made him a valuable asset to the organization. Beyond his professional capabilities, Ishaan is also a dependable colleague and a great team player who is always willing to support and collaborate.\n\nI genuinely appreciate the time we worked together and would highly recommend him to any organization looking for a sincere, capable, and growth-oriented marketing professional. Wishing him continued success ahead."}, {"n": "Ankur Tewari", "t": "Head of Sales, Ex Ferrero | Aircel | Cadbury", "r": "Senior to Ishaan, but didn't manage him directly", "d": "June 2026", "x": "Ishaan Jain is an exceptionally focused individual who picks up new challenges very quickly. He actively unlearns , owns up his mistakes, and continuously improves — a mindset that’s critical in fast-evolving environment.Ishaan collates data methodically, bringing clarity and precision to decision-making. Despite his young age, he demonstrates a level of maturity and strategic thinking that's truly impressive.\nOne of his strongest traits is how he uses technology to the fullest — leveraging tools and digital solutions to streamline workflows, enhance efficiency, and drive results. This tech-savvy approach, combined with his analytical rigor and accountability, makes him a highly valuable asset in any growth-oriented organization."}, {"n": "Madhav Poddar", "t": "ISB Co’27 | Founding Member, Pyvot | Ex-Zomato", "r": "Worked with Ishaan on the same team", "d": "April 2025", "x": "I had the opportunity to work closely with Ishaan during his time as a Key Account Manager at Zomato, and his dedication and thoughtful approach to work was exemplary.\n\nHe brings a sharp, curious mindset and always takes the initiative to look at problems from a unique viewpoint. He always backs his ideas with strong research and a deep understanding of all fields. His ability to think creatively and critically made him a valuable voice in team discussions. His approach to stakeholder and partner relationships remains his strong suit, thinking always from a customer-first approach.\n\nI am confident that he will add value wherever he goes."}, {"n": "Harman Singh", "t": "Key Accounts Manager at Toprankers | Ex-Zomato", "r": "Worked with Ishaan on the same team", "d": "March 2025", "x": "I’ve had the pleasure of working with Ishaan, and I can confidently say he is a top-tier sales and account management professional. His ability to build strong client relationships, identify growth opportunities, and drive results is truly impressive. Beyond his skills, he brings professionalism, dedication, and a strategic mindset to every interaction."}, {"n": "Palak Jain", "t": "Social Media @ District By Zomato", "r": "Worked with Ishaan on different teams", "d": "March 2025", "x": "Ishaan is a powerhouse of energy—diligent, proactive, and always on the move! There’s never a dull moment with him around; he hums his way through challenges with a big smile and an even bigger dose of positivity. It’s been amazing to be a small part of his journey, and I have no doubt he’s headed for something incredible!"}, {"n": "Dr. Vivek K. Verma", "t": "Assistant Professor, Program Co-Ordinator", "r": "Was Ishaan’s teacher", "d": "July 2023", "x": "It is with great enthusiasm and genuine admiration that I provide a heartfelt recommendation for my exceptional former student, Ishaan. Throughout his university journey, Ishaan's passion for the finance domain shone brightly, as did his unwavering dedication to excellence. With an impeccable eye for detail and a natural inclination for analytical thinking, Ishaan consistently impressed me through his abilities, knowledge and the numerous projects he undertook. Beyond his academic achievements, Ishaan's personal qualities of curiosity and a hunger for knowledge are truly commendable. I firmly believe that Ishaan will continue to thrive and make significant contributions in any academic or industrial role he pursues. It was an absolute privilege to teach and collaborate with Ishaan, and I wholeheartedly endorse him for his bright future ahead in any future course of actions. Keep it up Good luck for your future endeavors Ishaan. Have a great career ahead."}, {"n": "Bidisha Roy", "t": "Heading Entrepreneurship & Incubation, Amity University | Former Executive Director, St. Xavier’s University", "r": "Was Ishaan’s mentor", "d": "May 2023", "x": "Ishaan is an asset to any organization with excellent Managerial & Leadership skills, along with high capabilities for end-to-end handling of Conferences. He played significant role in Coordination of ‘National Seminar on Insurance’ organized by the Centre for Incubation, Consultancy & Entrepreneurship (CICE) of St. Xavier’s University, Kolkata."}, {"n": "Carmel De Rosario", "t": "Senior Human Resources Executive at Infiflex Technologies", "r": "Was Ishaan’s client", "d": "March 2023", "x": "Ishaan is a smart and hard worker who is good at multi-tasking and team handling."}, {"n": "Shania Williams", "t": "Business Development Executive at Accops", "r": "Was Ishaan’s client", "d": "March 2023", "x": "Ishaan is disciplined and functions very well under pressure."}];
+(function(){const tr=$('rtrack');if(!tr)return;const cards=[...tr.children],pv=$('rprev'),nx=$('rnext');
+  const step=()=>cards[0].getBoundingClientRect().width+14;
+  pv.onclick=()=>tr.scrollBy({left:-step(),behavior:reduce?'auto':'smooth'});nx.onclick=()=>tr.scrollBy({left:step(),behavior:reduce?'auto':'smooth'});
+  const upd=()=>{pv.disabled=tr.scrollLeft<4;nx.disabled=tr.scrollLeft>tr.scrollWidth-tr.clientWidth-4;};tr.addEventListener('scroll',()=>requestAnimationFrame(upd),{passive:true});upd();
+  tr.querySelectorAll('.readall').forEach(b=>b.addEventListener('click',()=>{const f=b.closest('.rec'),r=RECS[+f.dataset.r];from=b;
+    pop.style.setProperty('--pb','#1C1C21');pop.style.setProperty('--pc','#F4F0E6');
+    const rc=f.getBoundingClientRect();pop.style.setProperty('--ox',(rc.left+rc.width/2-innerWidth/2)+'px');pop.style.setProperty('--oy',(rc.top+rc.height/2-innerHeight/2)+'px');
+    const e=t=>t.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+    pop.classList.remove('photo');pin.innerHTML='<p class="lab2" style="padding-right:44px">LinkedIn recommendation, '+e(r.d)+'</p><h2 class="d" id="popt" style="font-size:clamp(34px,6vw,56px);color:#C9F250">“</h2><div class="rfull">'+r.x.split(/\n+/).map(p=>'<p>'+e(p)+'</p>').join('')+'</div><div class="rwho"><b>'+e(r.n)+'</b><small>'+e(r.t)+'</small><small>'+e(r.r)+'</small></div>';
+    pin.scrollTop=0;pop.classList.remove('closing');pop.showModal();}));})();
+
+/* quote tile opens the full recommendation */
+document.querySelectorAll('[data-rec]').forEach(t=>{const go=()=>{const b=document.querySelector('.rec[data-r="'+t.dataset.rec+'"] .readall');if(b){b.click();from=t;const r=t.getBoundingClientRect();pop.style.setProperty('--ox',(r.left+r.width/2-innerWidth/2)+'px');pop.style.setProperty('--oy',(r.top+r.height/2-innerHeight/2)+'px');}};
+  t.addEventListener('click',go);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});});
+
+$('copy').addEventListener('click',function(){const b=this;navigator.clipboard.writeText($('mail').textContent).then(()=>{b.textContent='Copied';},()=>{b.textContent='Select the address to copy';});});
+})();
+</script>
+</body>
+</html>
